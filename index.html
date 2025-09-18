@@ -4,41 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agent Codr - The Future of Business Automation</title>
-    <meta name="description" content="Agent Codr engineers superintelligent automation systems that save time, increase revenue, and eliminate complexity. Your business logic, our AI magic.">
+    <meta name="description" content="Agent Codr engineers superintelligent automation systems that create competitive advantages. Built by operators for the future of business.">
     
-    <!-- Font Preloads for Performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Modern Futuristic Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
+        /* Catppuccin Macchiato + AI Enhancement */
         :root {
-            /* Catppuccin Macchiato Color Palette */
-            --bg-primary: #181926;
-            --bg-secondary: #1e2030;
-            --bg-tertiary: #24273a;
-            --surface: #363a4f;
-            --surface-hover: #494d64;
-            --overlay: #6e738d;
-            --text-primary: #cad3f5;
-            --text-secondary: #b8c0e0;
-            --text-muted: #a6adc8;
-            --primary: #cba6f7;
-            --accent: #89b4fa;
-            --success: #4ade80;
-            --warning: #f5a97f;
-            --error: #ed8796;
-            --pink: #f4b8e4;
-            --teal: #81c8be;
-            --sapphire: #7dc4e4;
-            --maroon: #e8a2af;
-            --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            --gradient-ai: linear-gradient(135deg, #b4a7d6 0%, #8e7cc3 50%, #674ea7 100%);
-            --gradient-success: linear-gradient(135deg, var(--success) 0%, var(--teal) 100%);
-            --crust: #11111b;
+            /* Core Colors */
+            --ctp-rosewater: #f4dbd6;
+            --ctp-flamingo: #f0c6c6;
+            --ctp-pink: #f5bde6;
+            --ctp-mauve: #c6a0f6;
+            --ctp-red: #ed8796;
+            --ctp-maroon: #ee99a0;
+            --ctp-peach: #f5a97f;
+            --ctp-yellow: #eed49f;
+            --ctp-green: #a6da95;
+            --ctp-teal: #8bd5ca;
+            --ctp-sky: #91d7e3;
+            --ctp-sapphire: #7dc4e4;
+            --ctp-blue: #8aadf4;
+            --ctp-lavender: #b7bdf8;
+            --ctp-text: #cad3f5;
+            --ctp-subtext1: #b8c0e0;
+            --ctp-subtext0: #a5adcb;
+            --ctp-overlay2: #939ab7;
+            --ctp-overlay1: #8087a2;
+            --ctp-overlay0: #6e738d;
+            --ctp-surface2: #5b6078;
+            --ctp-surface1: #494d64;
+            --ctp-surface0: #363a4f;
+            --ctp-base: #24273a;
+            --ctp-mantle: #1e2030;
+            --ctp-crust: #181926;
+
+            /* AI-Enhanced Semantic Colors */
+            --primary: var(--ctp-blue);
+            --secondary: var(--ctp-sapphire);
+            --accent: var(--ctp-mauve);
+            --success: var(--ctp-green);
+            --warning: var(--ctp-yellow);
+            --danger: var(--ctp-red);
+            --ai-glow: rgba(138, 173, 244, 0.4);
+            
+            --text-primary: var(--ctp-text);
+            --text-secondary: var(--ctp-subtext1);
+            --text-muted: var(--ctp-subtext0);
+            --text-dim: var(--ctp-overlay2);
+            
+            --bg-primary: var(--ctp-crust);
+            --bg-secondary: var(--ctp-mantle);
+            --bg-tertiary: var(--ctp-base);
+            --bg-surface: var(--ctp-surface0);
+            --bg-elevated: var(--ctp-surface1);
+
+            /* Futuristic Gradients */
+            --gradient-primary: linear-gradient(135deg, var(--ctp-blue) 0%, var(--ctp-sapphire) 50%, var(--ctp-teal) 100%);
+            --gradient-accent: linear-gradient(135deg, var(--ctp-mauve) 0%, var(--ctp-lavender) 50%, var(--ctp-pink) 100%);
+            --gradient-success: linear-gradient(135deg, var(--ctp-green) 0%, var(--ctp-teal) 100%);
+            --gradient-ai: linear-gradient(45deg, var(--ctp-blue), var(--ctp-mauve), var(--ctp-sapphire), var(--ctp-lavender));
+
+            /* Animation Variables */
+            --transition-fast: 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-base: 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-slow: 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
 
         * {
@@ -47,21 +80,123 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+            font-family: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--bg-primary);
             color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
-            position: relative;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            font-feature-settings: 'kern' 1, 'liga' 1, 'ss01' 1;
         }
 
-        /* Canvas Background */
-        .canvas-container {
+        /* Neural Network Background */
+        .neural-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            background: radial-gradient(ellipse at 50% 50%, 
+                rgba(36, 39, 58, 0.9) 0%,
+                rgba(30, 32, 48, 0.95) 25%,
+                rgba(24, 25, 38, 1) 50%,
+                rgba(24, 25, 38, 1) 100%);
+        }
+
+        #neuralCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.6;
+        }
+
+        /* Central glow effect */
+        .central-core {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 400px;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+
+        .core-shape {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: conic-gradient(
+                from 0deg,
+                transparent,
+                rgba(138, 173, 244, 0.2),
+                rgba(198, 160, 246, 0.2),
+                transparent,
+                rgba(125, 196, 228, 0.2),
+                transparent
+            );
+            border-radius: 50%;
+            animation: rotateCore 30s linear infinite;
+            filter: blur(60px);
+        }
+
+        @keyframes rotateCore {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .core-inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle,
+                rgba(138, 173, 244, 0.2) 0%,
+                rgba(198, 160, 246, 0.15) 30%,
+                transparent 70%
+            );
+            border-radius: 50%;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        /* Data streams */
+        .data-stream {
+            position: absolute;
+            width: 2px;
+            height: 100px;
+            background: linear-gradient(to bottom,
+                transparent,
+                rgba(139, 213, 202, 0.4),
+                transparent
+            );
+            animation: dataFlow 4s linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes dataFlow {
+            0% { 
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+            50% { 
+                opacity: 0.6;
+            }
+            100% { 
+                opacity: 0;
+                transform: translateY(100vh);
+            }
+        }
+
+        /* Floating Particles */
+        .particles {
             position: fixed;
             top: 0;
             left: 0;
@@ -71,51 +206,84 @@
             z-index: 1;
         }
 
-        #neural-canvas {
-            width: 100%;
-            height: 100%;
-            opacity: 0.6;
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--primary);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float 15s linear infinite;
+        }
+
+        .particle:nth-child(odd) {
+            background: var(--accent);
+            animation-duration: 20s;
+        }
+
+        .particle:nth-child(3n) {
+            background: var(--secondary);
+            animation-duration: 25s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) translateX(0px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-10vh) translateX(100px);
+                opacity: 0;
+            }
         }
 
         .container {
-            max-width: 1280px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
             position: relative;
-            z-index: 2;
+            z-index: 10;
         }
 
-        /* Navigation */
-        .nav {
-            padding: 1.5rem 0;
-            background: rgba(24, 25, 38, 0.8);
+        /* Enhanced Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(24, 25, 38, 0.85);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(110, 115, 141, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            border-bottom: 1px solid rgba(138, 173, 244, 0.1);
+            z-index: 100;
+            transition: all var(--transition-base);
         }
 
-        .nav-container {
+        .header.scrolled {
+            background: rgba(24, 25, 38, 0.95);
+            border-bottom-color: rgba(138, 173, 244, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 2rem;
+            justify-content: space-between;
+            padding: 1rem 0;
         }
 
-        .logo-container {
+        .logo {
             display: flex;
             align-items: center;
             gap: 0.75rem;
             cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .logo-container:hover {
-            transform: translateX(3px);
+            transition: all var(--transition-base);
         }
 
         .robot-logo {
@@ -126,13 +294,7 @@
             backdrop-filter: blur(10px);
             padding: 4px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3),
-                        inset 0 1px 2px rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .robot-logo:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 15px rgba(203, 166, 247, 0.3);
+                        inset 0 1px 0 rgba(255, 255, 255, 0.05);
         }
 
         .logo-text {
@@ -141,654 +303,751 @@
         }
 
         .logo-main {
+            font-family: 'JetBrains Mono', monospace;
             font-size: 1.25rem;
             font-weight: 700;
+            letter-spacing: -0.02em;
             display: flex;
             align-items: baseline;
         }
 
-        .logo-main .agent {
-            color: var(--primary);
+        .logo-agent {
+            color: #cba6f7;
         }
 
-        .logo-main .codr {
-            color: var(--accent);
+        .logo-codr {
+            color: #89b4fa;
         }
 
         .logo-subtitle {
             font-size: 0.8rem;
-            color: var(--text-muted);
-            opacity: 0.8;
-            letter-spacing: 0.5px;
+            color: #b8c0e0;
+            margin-top: 0.25rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            opacity: 0.95;
+        }
+
+        .logo:hover {
+            transform: translateX(5px);
+        }
+
+        .logo:hover .robot-logo {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.08);
         }
 
         .nav-links {
             display: flex;
-            gap: 2.5rem;
-            align-items: center;
+            gap: 2rem;
+            list-style: none;
         }
 
         .nav-links a {
             color: var(--text-secondary);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
+            font-size: 0.95rem;
+            letter-spacing: -0.01em;
+            transition: all var(--transition-base);
             position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 1px;
+            background: var(--primary);
+            transition: all var(--transition-base);
+            transform: translateX(-50%);
         }
 
         .nav-links a:hover {
             color: var(--primary);
+            transform: translateY(-1px);
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-primary);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
+        .nav-links a:hover::before {
             width: 100%;
         }
 
-        .nav-cta {
+        .cta-button {
             background: var(--gradient-primary);
-            color: white;
-            padding: 0.6rem 1.5rem;
-            border-radius: 8px;
+            color: var(--bg-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            transition: all var(--transition-base);
+            box-shadow: 0 4px 20px rgba(138, 173, 244, 0.2);
             position: relative;
             overflow: hidden;
         }
 
-        .nav-cta::before {
+        .cta-button::before {
             content: '';
             position: absolute;
             top: 0;
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.6s ease;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left var(--transition-slow);
         }
 
-        .nav-cta:hover::before {
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(138, 173, 244, 0.35);
+        }
+
+        .cta-button:hover::before {
             left: 100%;
         }
 
-        .nav-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(203, 166, 247, 0.3);
-        }
-
-        /* Mobile Menu Toggle */
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-primary);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .mobile-menu-toggle {
-                display: block;
-            }
+        /* Main Content */
+        main {
+            margin-top: 80px;
         }
 
         /* Hero Section */
         .hero {
-            padding: 6rem 0 4rem 0;
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
+            padding: 8rem 0;
+            text-align: center;
             position: relative;
-            background: radial-gradient(circle at 50% 50%, rgba(203, 166, 247, 0.1) 0%, transparent 50%);
+            overflow: hidden;
         }
 
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(138, 173, 244, 0.03) 0%, transparent 70%);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse 4s ease-in-out infinite;
+            pointer-events: none;
         }
 
-        .hero-text h1 {
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+            50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.1; }
+        }
+
+        .hero h1 {
             font-family: 'Manrope', sans-serif;
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
             line-height: 1.1;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            letter-spacing: -0.03em;
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: shimmer 3s ease-in-out infinite;
+            background-size: 200% 200%;
+            animation: gradientShift 3s ease-in-out infinite;
         }
 
-        @keyframes shimmer {
-            0%, 100% { filter: brightness(1) hue-rotate(0deg); }
-            50% { filter: brightness(1.2) hue-rotate(10deg); }
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
 
-        .hero-text p {
-            font-size: 1.25rem;
+        .hero .subtitle {
+            font-size: clamp(1.125rem, 2.5vw, 1.375rem);
             color: var(--text-secondary);
-            margin-bottom: 2rem;
-            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+            font-weight: 400;
         }
 
-        .hero-buttons {
+        .hero .tagline {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 500px;
+            margin: 0 auto 4rem;
+            font-weight: 400;
+        }
+
+        .hero-cta {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
+            justify-content: center;
             flex-wrap: wrap;
+            margin-bottom: 4rem;
         }
 
         .btn {
-            padding: 0.875rem 2rem;
-            border-radius: 12px;
-            text-decoration: none;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
             font-weight: 600;
-            transition: all 0.3s ease;
+            font-size: 1rem;
+            text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.75rem;
+            transition: all var(--transition-base);
+            border: none;
+            cursor: pointer;
             position: relative;
             overflow: hidden;
         }
 
         .btn-primary {
             background: var(--gradient-primary);
-            color: white;
-            box-shadow: 0 4px 15px rgba(203, 166, 247, 0.3);
+            color: var(--bg-primary);
+            box-shadow: 0 6px 20px rgba(138, 173, 244, 0.25);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left var(--transition-slow);
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(203, 166, 247, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(138, 173, 244, 0.4);
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
         }
 
         .btn-secondary {
-            background: rgba(110, 115, 141, 0.1);
-            color: var(--text-primary);
-            border: 1px solid rgba(110, 115, 141, 0.3);
+            background: rgba(138, 173, 244, 0.1);
+            color: var(--primary);
+            border: 2px solid rgba(138, 173, 244, 0.3);
+            backdrop-filter: blur(10px);
         }
 
         .btn-secondary:hover {
-            background: rgba(110, 115, 141, 0.2);
-            transform: translateY(-2px);
+            border-color: var(--primary);
+            background: rgba(138, 173, 244, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(138, 173, 244, 0.2);
         }
 
-        /* Transformation Animation Section */
-        .transformation-section {
-            padding: 4rem 0;
-            position: relative;
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(180deg, transparent 0%, rgba(203, 166, 247, 0.05) 50%, transparent 100%);
-        }
-
-        .transformation-container {
-            width: 100%;
+        /* Problem Section */
+        .problem {
+            padding: 6rem 0;
+            background: var(--bg-secondary);
             position: relative;
         }
 
-        /* Transformation stages */
-        .stage {
-            position: absolute;
-            width: 100%;
-            min-height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .stage.active {
-            opacity: 1;
-            position: relative;
-        }
-
-        /* Stage 1: Chaos */
-        .chaos-stage {
-            animation: chaosIn 2s ease-out;
-        }
-
-        @keyframes chaosIn {
-            0% { transform: scale(0.8) rotate(-5deg); opacity: 0; }
-            100% { transform: scale(1) rotate(0deg); opacity: 1; }
-        }
-
-        .chaos-elements {
-            position: relative;
-            width: 100%;
-            max-width: 800px;
-            height: 400px;
-            margin: 0 auto;
-        }
-
-        .chaos-item {
-            position: absolute;
-            padding: 15px 25px;
-            background: rgba(49, 50, 68, 0.8);
-            border: 1px solid rgba(203, 166, 247, 0.3);
-            border-radius: 8px;
-            color: var(--text-muted);
-            font-size: 14px;
-            animation: float-chaos 4s ease-in-out infinite;
-        }
-
-        @keyframes float-chaos {
-            0%, 100% { transform: translateY(0) rotate(-2deg); }
-            50% { transform: translateY(-20px) rotate(2deg); }
-        }
-
-        .chaos-item:nth-child(1) { 
-            top: 20%; 
-            left: 10%; 
-            animation-delay: 0s; 
-            background: rgba(203, 166, 247, 0.1);
-            border-color: rgba(203, 166, 247, 0.4);
-        }
-        .chaos-item:nth-child(2) { 
-            top: 50%; 
-            right: 15%; 
-            animation-delay: 0.5s;
-            background: rgba(137, 180, 250, 0.1);
-            border-color: rgba(137, 180, 250, 0.4);
-        }
-        .chaos-item:nth-child(3) { 
-            bottom: 30%; 
-            left: 20%; 
-            animation-delay: 1s;
-            background: rgba(74, 222, 128, 0.1);
-            border-color: rgba(74, 222, 128, 0.4);
-        }
-        .chaos-item:nth-child(4) { 
-            top: 10%; 
-            right: 25%; 
-            animation-delay: 1.5s;
-            background: rgba(245, 169, 127, 0.1);
-            border-color: rgba(245, 169, 127, 0.4);
-        }
-
-        /* Stage 2: Robot Arrival */
-        .robot-stage {
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .robot-entrance {
-            animation: robotArrive 2s ease-out;
-        }
-
-        @keyframes robotArrive {
-            0% { 
-                transform: scale(0) rotate(720deg); 
-                filter: brightness(2) blur(10px);
-            }
-            50% { 
-                transform: scale(1.2) rotate(360deg); 
-                filter: brightness(1.5) blur(5px);
-            }
-            100% { 
-                transform: scale(1) rotate(0deg); 
-                filter: brightness(1) blur(0);
-            }
-        }
-
-        .robot-transform-container {
-            width: 200px;
-            height: 200px;
-            position: relative;
-            margin: 0 auto;
-        }
-
-        .robot-transform-image {
-            width: 100%;
-            height: 100%;
-            border-radius: 24px;
-            position: absolute;
-            top: 0;
-            left: 0;
-            transition: all 0.3s ease;
-        }
-
-        .robot-transform-image.open {
-            opacity: 1;
-        }
-
-        .robot-transform-image.wink {
-            opacity: 0;
-        }
-
-        .robot-transform-container.winking .robot-transform-image.open {
-            opacity: 0;
-        }
-
-        .robot-transform-container.winking .robot-transform-image.wink {
-            opacity: 1;
-        }
-
-        .robot-transform-container.processing {
-            animation: process 1s ease-in-out;
-        }
-
-        @keyframes process {
-            0%, 100% { transform: scale(1); }
-            25% { transform: scale(1.1) rotate(-5deg); }
-            50% { transform: scale(1.15); }
-            75% { transform: scale(1.1) rotate(5deg); }
-        }
-
-        /* Energy waves */
-        .energy-wave {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            border: 2px solid;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0;
-        }
-
-        .energy-wave.pulse {
-            animation: energyPulse 2s ease-out;
-        }
-
-        @keyframes energyPulse {
-            0% {
-                width: 200px;
-                height: 200px;
-                opacity: 1;
-                border-color: var(--primary);
-            }
-            50% {
-                border-color: var(--accent);
-            }
-            100% {
-                width: 600px;
-                height: 600px;
-                opacity: 0;
-                border-color: var(--success);
-            }
-        }
-
-        /* Stage 3: Transformation */
-        .transform-stage {
-            width: 100%;
-        }
-
-        .transform-visual {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 50px;
-            flex-wrap: wrap;
-        }
-
-        .before-box, .after-box {
-            padding: 30px;
-            border-radius: 16px;
-            width: 300px;
-            transition: all 1s ease;
-        }
-
-        .before-box {
-            background: rgba(49, 50, 68, 0.6);
-            border: 2px dashed rgba(203, 166, 247, 0.3);
-            transform: translateX(-100px);
-            opacity: 0;
-        }
-
-        .before-box.show {
-            transform: translateX(0);
-            opacity: 1;
-        }
-
-        .after-box {
-            background: linear-gradient(135deg, rgba(74, 222, 128, 0.1), rgba(137, 180, 250, 0.1));
-            border: 2px solid rgba(74, 222, 128, 0.5);
-            transform: translateX(100px);
-            opacity: 0;
-        }
-
-        .after-box.show {
-            transform: translateX(0);
-            opacity: 1;
-        }
-
-        .transform-arrow {
-            font-size: 3rem;
-            color: var(--primary);
-            animation: arrowPulse 2s ease-in-out infinite;
-        }
-
-        @keyframes arrowPulse {
-            0%, 100% { transform: scale(1) translateX(0); }
-            50% { transform: scale(1.2) translateX(10px); }
-        }
-
-        /* Success message */
-        .success-message {
+        .section-header {
             text-align: center;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 1s ease;
-            margin-top: 3rem;
+            margin-bottom: 4rem;
         }
 
-        .success-message.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .success-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--success) 0%, var(--accent) 50%, var(--primary) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
-            animation: shimmer 3s ease-in-out infinite;
-        }
-
-        /* Data particles */
-        .particle-system {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            overflow: hidden;
-            top: 0;
-            left: 0;
-        }
-
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: var(--accent);
-            border-radius: 50%;
-            opacity: 0;
-        }
-
-        .particle.flow {
-            animation: particleFlow 3s ease-out;
-        }
-
-        @keyframes particleFlow {
-            0% {
-                transform: translate(0, 0) scale(0);
-                opacity: 1;
-            }
-            50% {
-                transform: translate(var(--tx), var(--ty)) scale(1);
-                opacity: 0.8;
-            }
-            100% {
-                transform: translate(calc(var(--tx) * 2), calc(var(--ty) * 2)) scale(0);
-                opacity: 0;
-            }
-        }
-
-        /* Control buttons */
-        .transform-controls {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 2rem;
-        }
-
-        .control-btn {
-            padding: 12px 24px;
-            background: var(--gradient-primary);
-            border: none;
-            border-radius: 10px;
-            color: white;
+        .section-header h2 {
+            font-family: 'Manrope', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 14px;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
         }
 
-        .control-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(203, 166, 247, 0.5);
+        .section-header p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
         }
 
-        /* Loading bar */
-        .loading-bar {
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .problem-item {
+            background: rgba(54, 58, 79, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            border: 1px solid rgba(110, 115, 141, 0.2);
+            transition: all var(--transition-base);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .problem-item::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 4px;
-            background: rgba(30, 32, 48, 0.5);
+            height: 2px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform var(--transition-base);
+        }
+
+        .problem-item:hover {
+            border-color: rgba(138, 173, 244, 0.4);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .problem-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .problem-item h3 {
+            font-size: 1.375rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .problem-item p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Approach Section */
+        .approach {
+            padding: 8rem 0;
+            position: relative;
+        }
+
+        .approach-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .approach-text h2 {
+            font-family: 'Manrope', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+
+        .approach-text p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        .approach-features {
+            list-style: none;
+            margin-bottom: 3rem;
+        }
+
+        .approach-features li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+            transition: all var(--transition-base);
+        }
+
+        .approach-features li:hover {
+            transform: translateX(10px);
+            color: var(--text-primary);
+        }
+
+        .approach-features .check {
+            color: var(--success);
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+
+        .approach-visual {
+            background: rgba(54, 58, 79, 0.4);
+            backdrop-filter: blur(15px);
+            border-radius: 2rem;
+            padding: 4rem;
+            border: 1px solid rgba(110, 115, 141, 0.2);
+            text-align: center;
+            position: relative;
             overflow: hidden;
         }
 
-        .loading-progress {
-            height: 100%;
-            width: 0%;
-            background: linear-gradient(90deg, var(--primary), var(--accent), var(--success));
-            transition: width 0.3s ease;
-            box-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+        .approach-visual::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(
+                transparent,
+                rgba(138, 173, 244, 0.1),
+                transparent,
+                rgba(198, 160, 246, 0.1),
+                transparent
+            );
+            animation: rotate 8s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .approach-visual .icon {
+            width: 100px;
+            height: 100px;
+            background: var(--gradient-primary);
+            border-radius: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            position: relative;
+            z-index: 1;
+            transition: all var(--transition-base);
+        }
+
+        .approach-visual:hover .icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 15px 30px rgba(138, 173, 244, 0.3);
+        }
+
+        .approach-visual .icon i {
+            font-size: 2.5rem;
+            color: var(--bg-primary);
+        }
+
+        .approach-visual h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .approach-visual p {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+            position: relative;
+            z-index: 1;
         }
 
         /* Results Section */
-        .results {
-            padding: 4rem 0;
-            background: linear-gradient(180deg, transparent 0%, rgba(30, 32, 48, 0.5) 100%);
+        .services {
+            padding: 8rem 0;
+            background: var(--bg-secondary);
+            position: relative;
         }
 
-        .results h2 {
-            font-family: 'Manrope', sans-serif;
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .results-grid {
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
         }
 
-        .result-card {
-            background: rgba(36, 39, 58, 0.6);
-            backdrop-filter: blur(20px);
-            border-radius: 16px;
-            padding: 2rem;
+        .service-card {
+            background: rgba(54, 58, 79, 0.6);
+            backdrop-filter: blur(15px);
+            padding: 3rem 2.5rem;
+            border-radius: 2rem;
             border: 1px solid rgba(110, 115, 141, 0.2);
-            transition: all 0.3s ease;
+            transition: all var(--transition-base);
             position: relative;
             overflow: hidden;
         }
 
-        .result-card::before {
+        .service-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
-            background: var(--gradient-primary);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
+            height: 3px;
+            background: var(--gradient-success);
+            opacity: 0;
+            transition: opacity var(--transition-base);
         }
 
-        .result-card:hover::before {
-            transform: scaleX(1);
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(138, 173, 244, 0.4);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
         }
 
-        .result-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        .service-card:hover::before {
+            opacity: 1;
         }
 
         .result-metric {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 700;
-            color: var(--success);
-            margin-bottom: 0.5rem;
+            background: var(--gradient-success);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
         }
 
-        .result-title {
-            font-size: 1.25rem;
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
             color: var(--text-primary);
-            margin-bottom: 0.5rem;
         }
 
-        .result-description {
+        .service-card p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+            font-size: 1.125rem;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 2.5rem;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .service-features .check {
+            color: var(--success);
+            font-size: 1.125rem;
+        }
+
+        .case-study-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--primary);
+            font-weight: 500;
+            margin-top: 1.5rem;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            padding: 0.75rem 0;
+        }
+
+        .case-study-link:hover {
+            color: var(--secondary);
+            transform: translateX(10px);
+        }
+
+        /* AI Section */
+        .ai-section {
+            padding: 8rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ai-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: conic-gradient(
+                transparent,
+                rgba(198, 160, 246, 0.15),
+                transparent,
+                rgba(183, 189, 248, 0.1),
+                transparent
+            );
+            border-radius: 50%;
+            animation: rotate 12s linear infinite;
+            pointer-events: none;
+        }
+
+        .ai-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .ai-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(198, 160, 246, 0.15);
+            color: var(--accent);
+            padding: 0.75rem 1.5rem;
+            border-radius: 2rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 2.5rem;
+            border: 1px solid rgba(198, 160, 246, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all var(--transition-base);
+        }
+
+        .ai-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(198, 160, 246, 0.2);
+        }
+
+        .ai-content h2 {
+            font-family: 'Manrope', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .ai-content p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 8rem 0;
+            background: var(--bg-tertiary);
+            text-align: center;
+            position: relative;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-family: 'Manrope', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            line-height: 1.7;
+        }
+
+        .cta-details {
+            background: rgba(54, 58, 79, 0.6);
+            backdrop-filter: blur(15px);
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            margin: 3rem 0;
+            border: 1px solid rgba(110, 115, 141, 0.2);
+            transition: all var(--transition-base);
+        }
+
+        .cta-details:hover {
+            border-color: rgba(138, 173, 244, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-details p {
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+        }
+
+        .cta-details p:last-child {
+            margin-bottom: 0;
+        }
+
+        .exclusivity-note {
+            margin-top: 1.5rem;
             color: var(--text-muted);
-            line-height: 1.6;
+            font-size: 0.95rem;
+            font-style: italic;
         }
 
         /* Footer */
         .footer {
-            padding: 3rem 0;
-            background: var(--bg-tertiary);
+            padding: 4rem 0;
+            background: var(--bg-primary);
             border-top: 1px solid rgba(110, 115, 141, 0.1);
             text-align: center;
-            color: var(--text-muted);
         }
 
-        .footer a {
-            color: var(--primary);
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
             text-decoration: none;
+            font-weight: 500;
+            transition: all var(--transition-base);
+            position: relative;
         }
 
-        .footer a:hover {
-            text-decoration: underline;
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--primary);
+            transition: width var(--transition-base);
         }
 
-        /* Animations */
+        .footer-links a:hover {
+            color: var(--primary);
+            transform: translateY(-1px);
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .footer p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Animations & Effects */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(40px);
             }
             to {
                 opacity: 1;
@@ -796,464 +1055,720 @@
             }
         }
 
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease forwards;
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-content {
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .fade-in-left {
+            animation: fadeInLeft 0.8s ease-out forwards;
+        }
+
+        .fade-in-right {
+            animation: fadeInRight 0.8s ease-out forwards;
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-reveal-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .scroll-reveal-left.revealed {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scroll-reveal-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .scroll-reveal-right.revealed {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .approach-content {
                 grid-template-columns: 1fr;
-                text-align: center;
+                gap: 4rem;
             }
 
-            .hero-text h1 {
-                font-size: 2.5rem;
+            .services-grid {
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
             }
 
-            .transform-visual {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 6rem 0;
+            }
+
+            .hero-cta {
                 flex-direction: column;
+                align-items: center;
+                gap: 1rem;
             }
 
-            .transform-arrow {
-                transform: rotate(90deg);
+            .problem-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .approach-visual {
+                padding: 3rem 2rem;
+            }
+
+            .service-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .footer-links {
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 4rem 0;
+            }
+
+            .btn {
+                padding: 0.875rem 1.5rem;
+                font-size: 0.95rem;
+            }
+
+            .problem-item, .service-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .approach-visual .icon {
+                width: 80px;
+                height: 80px;
+            }
+
+            .approach-visual .icon i {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Neural Network Canvas Background -->
-    <div class="canvas-container">
-        <canvas id="neural-canvas"></canvas>
+    <!-- Neural Network Backdrop -->
+    <div class="neural-backdrop">
+        <canvas id="neuralCanvas"></canvas>
+        <div class="central-core">
+            <div class="core-shape"></div>
+            <div class="core-inner"></div>
+        </div>
+        <div id="dataStreams"></div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="nav-container">
-            <div class="logo-container">
-                <img src="robot-logo.png" alt="Agent Codr Robot" class="robot-logo">
-                <div class="logo-text">
-                    <div class="logo-main">
-                        <span class="agent">Agent</span><span class="codr">Codr</span>
+    <!-- Floating Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <img src="robot-logo.png" alt="AgentCodr Robot" class="robot-logo">
+                    <div class="logo-text">
+                        <div class="logo-main">
+                            <span class="logo-agent">Agent</span>
+                            <span class="logo-codr">Codr</span>
+                        </div>
+                        <div class="logo-subtitle">AI that learns your business. Powered by human insight.</div>
                     </div>
-                    <span class="logo-subtitle">AI that learns your business. Powered by human insight.</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#approach">How It Works</a></li>
+                    <li><a href="#results">What We've Built</a></li>
+                    <li><a href="#ai">Coming Soon</a></li>
+                    <li><a href="#blog">Success Stories</a></li>
+                </ul>
+                <a href="#cta" class="cta-button">Tell Us What You Need</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="container">
+                <h1 class="fade-in">Agent Codr was built by operators who got tired of automation that's harder than doing it manually.</h1>
+                <p class="subtitle fade-in">While others make you learn their system, we built a system that learns your business. Just describe what you need. Our AI builds it. You focus on running your company.</p>
+                <p class="tagline fade-in">Finally, software that works the way you think.</p>
+                
+                <div class="hero-cta fade-in">
+                    <a href="#cta" class="btn btn-primary">
+                        <i class="fas fa-arrow-right"></i>
+                        Tell Us What You Need
+                    </a>
+                    <a href="#results" class="btn btn-secondary">
+                        <i class="fas fa-play"></i>
+                        See What We've Built
+                    </a>
                 </div>
             </div>
-            
-            <div class="nav-links">
-                <a href="#transformation">How It Works</a>
-                <a href="#results">Results</a>
-                <a href="#about">About</a>
-                <a href="mailto:contact@agentcodr.com" class="nav-cta">Get Started</a>
-            </div>
-            
-            <button class="mobile-menu-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </nav>
+        </section>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text fade-in-up">
-                    <h1>The Future of Business Automation is Here</h1>
-                    <p>Software that builds itself. AI that understands your business. Results that speak louder than promises.</p>
-                    <div class="hero-buttons">
-                        <a href="#transformation" class="btn btn-primary">
-                            <i class="fas fa-rocket"></i>
-                            See the Transformation
+        <!-- Problem Section -->
+        <section class="problem" id="problem">
+            <div class="container">
+                <div class="section-header scroll-reveal">
+                    <h2>Here's what we see:</h2>
+                    <p>Brilliant business minds who have better things to focus on than learning technical systems. Smart leaders who want solutions that match their thinking speed.</p>
+                </div>
+
+                <div class="problem-grid">
+                    <div class="problem-item scroll-reveal">
+                        <h3>Your time is worth more than learning complex systems</h3>
+                        <p>You have a clear vision of what your business needs. You shouldn't have to spend weeks learning new platforms or technical processes when you could be growing your company instead.</p>
+                    </div>
+                    <div class="problem-item scroll-reveal">
+                        <h3>Solutions should adapt to you, not the other way around</h3>
+                        <p>The best tools work the way you think. They understand your business context and adapt to your needs rather than forcing you to change how you operate.</p>
+                    </div>
+                    <div class="problem-item scroll-reveal">
+                        <h3>Great ideas deserve fast execution</h3>
+                        <p>When you know exactly what would solve your business problem, you want it built quickly and correctly. You shouldn't need to become a project manager just to get software developed.</p>
+                    </div>
+                </div>
+
+                <div class="section-header" style="margin-top: 6rem;">
+                    <p style="font-size: 1.125rem; color: var(--text-muted);">Most software is built by people who understand code but not business context.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Approach Section -->
+        <section class="approach" id="approach">
+            <div class="container">
+                <div class="approach-content">
+                    <div class="approach-text scroll-reveal-left">
+                        <h2>We built AI that matches how you think about business.</h2>
+                        <p>You think in terms of business outcomes, not technical specifications. Our AI understands that context and translates your vision directly into working solutions.</p>
+                        
+                        <ul class="approach-features">
+                            <li>
+                                <span class="check">✓</span>
+                                Describe your vision the way you think about it
+                            </li>
+                            <li>
+                                <span class="check">✓</span>
+                                Our AI handles the technical translation
+                            </li>
+                            <li>
+                                <span class="check">✓</span>
+                                Get working solutions in days
+                            </li>
+                            <li>
+                                <span class="check">✓</span>
+                                Focus on running your business, not managing development
+                            </li>
+                        </ul>
+
+                        <a href="#results" class="btn btn-primary">
+                            <i class="fas fa-arrow-right"></i>
+                            See What We've Built
+                        </a>
+                    </div>
+                    
+                    <div class="approach-visual scroll-reveal-right">
+                        <div class="icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>Business Vision to Working Software</h3>
+                        <p>Our AI bridges the gap between your business strategy and technical execution. You focus on the vision - we handle translating that into solutions that work.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="services" id="results">
+            <div class="container">
+                <div class="section-header scroll-reveal">
+                    <h2>What we've built recently</h2>
+                    <p>Real businesses getting real results. No coding knowledge required from any of them.</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card scroll-reveal">
+                        <div class="result-metric">$2.4M</div>
+                        <h3>Annual Revenue Increase</h3>
+                        <p><strong>Client said:</strong> "I need customers onboarded automatically and billing to handle itself."<br><br><strong>We built it.</strong> Their team went from spending 40 hours a week on manual processes to zero. The system runs itself.</p>
+                        
+                        <ul class="service-features">
+                            <li><span class="check">✓</span> Zero manual customer onboarding</li>
+                            <li><span class="check">✓</span> Billing handles itself completely</li>
+                            <li><span class="check">✓</span> Built exactly as the business owner envisioned</li>
+                            <li><span class="check">✓</span> No technical expertise required from client</li>
+                        </ul>
+
+                        <div class="case-study-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span>See how we built it</span>
+                        </div>
+                    </div>
+
+                    <div class="service-card scroll-reveal">
+                        <div class="result-metric">47 Hours</div>
+                        <h3>Saved Per Week</h3>
+                        <p><strong>Client said:</strong> "I want inventory, pricing, and customer service to work together automatically."<br><br><strong>We built it.</strong> Now their team focuses on growing the business instead of managing systems.</p>
+                        
+                        <ul class="service-features">
+                            <li><span class="check">✓</span> Inventory manages itself</li>
+                            <li><span class="check">✓</span> Pricing adjusts automatically</li>
+                            <li><span class="check">✓</span> Customer service runs autonomously</li>
+                            <li><span class="check">✓</span> Built from a strategic business conversation</li>
+                        </ul>
+
+                        <div class="case-study-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span>See the transformation</span>
+                        </div>
+                    </div>
+
+                    <div class="service-card scroll-reveal">
+                        <div class="result-metric">12X</div>
+                        <h3>Faster Decision Making</h3>
+                        <p><strong>Client said:</strong> "I need to analyze deals faster than my competitors."<br><br><strong>We built it.</strong> Our AI turns market noise into clear yes/no decisions. No technical analysis required.</p>
+                        
+                        <ul class="service-features">
+                            <li><span class="check">✓</span> Clear buy/sell signals</li>
+                            <li><span class="check">✓</span> No technical analysis needed</li>
+                            <li><span class="check">✓</span> Strategic insights in business terms</li>
+                            <li><span class="check">✓</span> Faster than any human analyst</li>
+                        </ul>
+
+                        <div class="case-study-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span>See the results</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Section -->
+        <section class="ai-section" id="ai">
+            <div class="container">
+                <div class="ai-content scroll-reveal">
+                    <div class="ai-badge">
+                        <i class="fas fa-rocket"></i>
+                        Coming Soon
+                    </div>
+                    
+                    <h2>Software That Builds Itself</h2>
+                    <p>We're building AI that turns your ideas into working software automatically. Just describe what you need - the AI handles everything else. No developers required.</p>
+                    <p>Right now, we use this technology internally to build custom solutions. Soon, you'll have direct access to the same AI that's already transforming businesses.</p>
+
+                    <div class="hero-cta">
+                        <a href="#cta" class="btn btn-primary">
+                            <i class="fas fa-star"></i>
+                            Get Early Access
                         </a>
                         <a href="#results" class="btn btn-secondary">
-                            <i class="fas fa-play"></i>
-                            View Results
+                            <i class="fas fa-arrow-right"></i>
+                            See What It Can Build
                         </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Transformation Animation Section -->
-    <section id="transformation" class="transformation-section">
-        <div class="container">
-            <div class="loading-bar">
-                <div class="loading-progress" id="progress"></div>
-            </div>
-
-            <div class="transformation-container">
-                <!-- Stage 1: Business Chaos -->
-                <div class="stage chaos-stage" id="stage1">
-                    <div class="chaos-elements">
-                        <div class="chaos-item">📊 Disconnected data</div>
-                        <div class="chaos-item">⏰ Manual processes</div>
-                        <div class="chaos-item">🔄 Repetitive tasks</div>
-                        <div class="chaos-item">📈 Scaling challenges</div>
+        <!-- CTA Section -->
+        <section class="cta-section" id="cta">
+            <div class="container">
+                <div class="cta-content scroll-reveal">
+                    <h2>Ready to tell us what you need?</h2>
+                    <p>We're working with a small group of business owners who are tired of complicated solutions. If you want software that just works without the headaches, let's talk.</p>
+                    
+                    <div class="cta-details">
+                        <p><strong>The Process:</strong> You describe what you need, the way you think about it</p>
+                        <p><strong>Our AI:</strong> Figures out how to build it and builds it</p>
+                        <p><strong>Your Result:</strong> Working software that does exactly what you wanted</p>
                     </div>
-                </div>
 
-                <!-- Stage 2: Robot Arrives -->
-                <div class="stage robot-stage" id="stage2">
-                    <div class="robot-entrance">
-                        <div class="robot-transform-container" id="robotContainer">
-                            <img src="robot-open.png" class="robot-transform-image open" alt="Robot">
-                            <img src="robot-wink.png" class="robot-transform-image wink" alt="Robot Winking">
-                            <div class="energy-wave" id="wave1"></div>
-                            <div class="energy-wave" id="wave2"></div>
-                        </div>
-                    </div>
-                    <h2 style="color: var(--text-secondary); font-size: 1.5rem; text-align: center; opacity: 0; animation: fadeInUp 1s ease 1s forwards;">
-                        AI that learns your business
-                    </h2>
-                </div>
-
-                <!-- Stage 3: Transformation Complete -->
-                <div class="stage transform-stage" id="stage3">
-                    <div class="transform-visual">
-                        <div class="before-box" id="beforeBox">
-                            <h3 style="color: var(--primary); margin-bottom: 15px;">Before</h3>
-                            <ul style="list-style: none; padding: 0; color: var(--text-muted);">
-                                <li>⚡ Manual workflows</li>
-                                <li>⚡ Data silos</li>
-                                <li>⚡ Slow processes</li>
-                            </ul>
-                        </div>
-                        <div class="transform-arrow">→</div>
-                        <div class="after-box" id="afterBox">
-                            <h3 style="color: var(--success); margin-bottom: 15px;">After AgentCodr</h3>
-                            <ul style="list-style: none; padding: 0; color: var(--text-secondary);">
-                                <li>✅ Automated systems</li>
-                                <li>✅ Unified intelligence</li>
-                                <li>✅ 12X faster execution</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="success-message" id="successMsg">
-                        <h1 class="success-title">Transformation Complete</h1>
-                        <p style="color: var(--text-secondary); font-size: 1.2rem;">Your business, powered by AI</p>
-                    </div>
-                </div>
-
-                <div class="particle-system" id="particles"></div>
-            </div>
-
-            <div class="transform-controls">
-                <button class="control-btn" onclick="startTransformation()">Watch Transformation</button>
-                <button class="control-btn" onclick="resetAnimation()">Reset</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Results Section -->
-    <section id="results" class="results">
-        <div class="container">
-            <h2>Real Results, Real Impact</h2>
-            <div class="results-grid">
-                <div class="result-card">
-                    <div class="result-metric" data-value="2.4">$0M</div>
-                    <div class="result-title">Revenue Generated</div>
-                    <div class="result-description">Our AI-powered solutions have driven millions in new revenue for our clients.</div>
-                </div>
-                <div class="result-card">
-                    <div class="result-metric" data-value="47">0 Hours</div>
-                    <div class="result-title">Time Saved Weekly</div>
-                    <div class="result-description">Automation that gives you back your most valuable resource.</div>
-                </div>
-                <div class="result-card">
-                    <div class="result-metric" data-value="12">0X</div>
-                    <div class="result-title">Faster Processing</div>
-                    <div class="result-description">From days to minutes - that's the power of intelligent automation.</div>
+                    <a href="mailto:hello@agentcodr.com" class="btn btn-primary" style="font-size: 1.125rem; padding: 1.25rem 2.5rem;">
+                        <i class="fas fa-comments"></i>
+                        Let's Talk About Your Needs
+                    </a>
+                    
+                    <p class="exclusivity-note">Working with select businesses who value simplicity over complexity</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Agent Codr. Building the future of business automation.</p>
-            <p>Contact: <a href="mailto:contact@agentcodr.com">contact@agentcodr.com</a></p>
+            <div class="footer-links">
+                <a href="#approach">Methodology</a>
+                <a href="#results">Recent Work</a>
+                <a href="#ai">AI Vision</a>
+                <a href="#blog">Intelligence</a>
+                <a href="mailto:hello@agentcodr.com">Contact</a>
+            </div>
+            <p>&copy; 2024 Agent Codr. Engineering the future of business operations.</p>
         </div>
     </footer>
 
     <script>
-        // Neural Network Background
-        class NeuralNetwork {
-            constructor(canvas) {
-                this.canvas = canvas;
-                this.ctx = canvas.getContext('2d');
-                this.nodes = [];
-                this.connections = [];
-                this.resize();
-                this.init();
-                window.addEventListener('resize', () => this.resize());
+        // Neural Network Visualization
+        function initNeuralNetwork() {
+            const canvas = document.getElementById('neuralCanvas');
+            if (!canvas) return;
+            
+            const ctx = canvas.getContext('2d');
+            
+            // Set canvas size
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
             }
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
 
-            resize() {
-                this.canvas.width = window.innerWidth;
-                this.canvas.height = window.innerHeight;
-            }
-
-            init() {
-                // Create nodes
-                for (let i = 0; i < 25; i++) {
-                    this.nodes.push({
-                        x: Math.random() * this.canvas.width,
-                        y: Math.random() * this.canvas.height,
-                        vx: (Math.random() - 0.5) * 0.5,
-                        vy: (Math.random() - 0.5) * 0.5,
-                        radius: Math.random() * 3 + 2,
-                        pulsePhase: Math.random() * Math.PI * 2
-                    });
+            // Neural network nodes
+            class Node {
+                constructor(x, y) {
+                    this.x = x;
+                    this.y = y;
+                    this.radius = Math.random() * 2 + 1;
+                    this.pulsePhase = Math.random() * Math.PI * 2;
+                    this.connections = [];
+                    this.glowIntensity = Math.random() * 0.3 + 0.3;
                 }
 
-                // Create connections
-                for (let i = 0; i < this.nodes.length; i++) {
-                    for (let j = i + 1; j < this.nodes.length; j++) {
-                        if (Math.random() < 0.15) {
-                            this.connections.push({ from: i, to: j, strength: Math.random() });
-                        }
-                    }
-                }
-            }
-
-            draw() {
-                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
-                // Draw connections
-                this.connections.forEach(conn => {
-                    const from = this.nodes[conn.from];
-                    const to = this.nodes[conn.to];
-                    const dx = to.x - from.x;
-                    const dy = to.y - from.y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
+                draw() {
+                    // Node glow
+                    const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius * 4);
+                    const pulse = Math.sin(Date.now() * 0.001 + this.pulsePhase) * 0.2 + 0.5;
                     
-                    if (distance < 300) {
-                        const opacity = (1 - distance / 300) * 0.3 * conn.strength;
-                        this.ctx.strokeStyle = `rgba(137, 180, 250, ${opacity})`;
-                        this.ctx.lineWidth = 1;
-                        this.ctx.beginPath();
-                        this.ctx.moveTo(from.x, from.y);
-                        
-                        // Curved connection
-                        const cx = (from.x + to.x) / 2 + (Math.random() - 0.5) * 50;
-                        const cy = (from.y + to.y) / 2 + (Math.random() - 0.5) * 50;
-                        this.ctx.quadraticCurveTo(cx, cy, to.x, to.y);
-                        this.ctx.stroke();
-                    }
-                });
-
-                // Draw nodes
-                this.nodes.forEach(node => {
-                    node.pulsePhase += 0.02;
-                    const pulse = Math.sin(node.pulsePhase) * 0.5 + 1;
-                    
-                    // Glow effect
-                    const gradient = this.ctx.createRadialGradient(node.x, node.y, 0, node.x, node.y, node.radius * pulse * 3);
-                    gradient.addColorStop(0, 'rgba(203, 166, 247, 0.5)');
-                    gradient.addColorStop(0.5, 'rgba(137, 180, 250, 0.2)');
+                    gradient.addColorStop(0, `rgba(138, 173, 244, ${0.6 * pulse * this.glowIntensity})`);
+                    gradient.addColorStop(0.5, `rgba(198, 160, 246, ${0.3 * pulse * this.glowIntensity})`);
                     gradient.addColorStop(1, 'transparent');
                     
-                    this.ctx.fillStyle = gradient;
-                    this.ctx.beginPath();
-                    this.ctx.arc(node.x, node.y, node.radius * pulse * 3, 0, Math.PI * 2);
-                    this.ctx.fill();
+                    ctx.fillStyle = gradient;
+                    ctx.fillRect(this.x - this.radius * 4, this.y - this.radius * 4, this.radius * 8, this.radius * 8);
+                    
+                    // Node core
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(183, 189, 248, ${pulse * 0.8})`;
+                    ctx.fill();
+                }
 
-                    // Core
-                    this.ctx.fillStyle = 'rgba(203, 166, 247, 0.8)';
-                    this.ctx.beginPath();
-                    this.ctx.arc(node.x, node.y, node.radius * pulse, 0, Math.PI * 2);
-                    this.ctx.fill();
-                });
+                connectTo(node) {
+                    this.connections.push(node);
+                }
+
+                drawConnections() {
+                    this.connections.forEach(node => {
+                        const gradient = ctx.createLinearGradient(this.x, this.y, node.x, node.y);
+                        const pulse = Math.sin(Date.now() * 0.002 + this.pulsePhase) * 0.15 + 0.15;
+                        
+                        gradient.addColorStop(0, `rgba(139, 213, 202, ${pulse})`);
+                        gradient.addColorStop(0.5, `rgba(125, 196, 228, ${pulse * 1.5})`);
+                        gradient.addColorStop(1, `rgba(139, 213, 202, ${pulse})`);
+                        
+                        ctx.strokeStyle = gradient;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(this.x, this.y);
+                        
+                        // Create curved connection
+                        const cx = (this.x + node.x) / 2 + (Math.random() - 0.5) * 30;
+                        const cy = (this.y + node.y) / 2 + (Math.random() - 0.5) * 30;
+                        ctx.quadraticCurveTo(cx, cy, node.x, node.y);
+                        ctx.stroke();
+                    });
+                }
             }
 
-            update() {
-                this.nodes.forEach(node => {
-                    node.x += node.vx;
-                    node.y += node.vy;
-
-                    if (node.x < 0 || node.x > this.canvas.width) node.vx *= -1;
-                    if (node.y < 0 || node.y > this.canvas.height) node.vy *= -1;
-                });
+            // Create neural network
+            const nodes = [];
+            const nodeCount = 25;
+            
+            // Create nodes in a pattern
+            for (let i = 0; i < nodeCount; i++) {
+                const angle = (i / nodeCount) * Math.PI * 2;
+                const radius = 150 + Math.random() * 250;
+                const x = canvas.width / 2 + Math.cos(angle) * radius + (Math.random() - 0.5) * 100;
+                const y = canvas.height / 2 + Math.sin(angle) * radius + (Math.random() - 0.5) * 100;
+                nodes.push(new Node(x, y));
             }
 
-            animate() {
-                this.update();
-                this.draw();
-                requestAnimationFrame(() => this.animate());
-            }
-        }
-
-        // Transformation Animation
-        let currentStage = 0;
-        const stages = ['stage1', 'stage2', 'stage3'];
-        
-        function updateProgress(percent) {
-            document.getElementById('progress').style.width = percent + '%';
-        }
-        
-        function showStage(stageNum) {
-            stages.forEach((stage, index) => {
-                const element = document.getElementById(stage);
-                if (index === stageNum) {
-                    element.classList.add('active');
-                } else {
-                    element.classList.remove('active');
+            // Create connections
+            nodes.forEach((node, i) => {
+                // Connect to nearby nodes
+                for (let j = 0; j < 2; j++) {
+                    const targetIndex = (i + Math.floor(Math.random() * 4) + 1) % nodeCount;
+                    node.connectTo(nodes[targetIndex]);
                 }
             });
+
+            // Animation loop
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                // Draw connections first
+                nodes.forEach(node => node.drawConnections());
+                
+                // Draw nodes
+                nodes.forEach(node => node.draw());
+                
+                requestAnimationFrame(animate);
+            }
+            animate();
+
+            // Create data streams
+            function createDataStream() {
+                const stream = document.createElement('div');
+                stream.className = 'data-stream';
+                stream.style.left = Math.random() * window.innerWidth + 'px';
+                stream.style.animationDelay = Math.random() * 3 + 's';
+                stream.style.animationDuration = (3 + Math.random() * 2) + 's';
+                const streamsContainer = document.getElementById('dataStreams');
+                if (streamsContainer) {
+                    streamsContainer.appendChild(stream);
+                    // Remove after animation
+                    setTimeout(() => stream.remove(), 5000);
+                }
+            }
+
+            // Create streams periodically
+            setInterval(createDataStream, 800);
         }
-        
+
+        // Enhanced particle system
         function createParticles() {
-            const container = document.getElementById('particles');
-            container.innerHTML = '';
-            
-            for (let i = 0; i < 30; i++) {
-                setTimeout(() => {
-                    const particle = document.createElement('div');
-                    particle.className = 'particle';
-                    particle.style.left = Math.random() * 100 + '%';
-                    particle.style.top = Math.random() * 100 + '%';
-                    particle.style.setProperty('--tx', (Math.random() - 0.5) * 200 + 'px');
-                    particle.style.setProperty('--ty', (Math.random() - 0.5) * 200 + 'px');
-                    particle.style.background = ['#cba6f7', '#89b4fa', '#4ade80'][Math.floor(Math.random() * 3)];
-                    container.appendChild(particle);
-                    particle.classList.add('flow');
-                    
-                    setTimeout(() => particle.remove(), 3000);
-                }, i * 100);
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 15;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                particlesContainer.appendChild(particle);
             }
         }
-        
-        function startTransformation() {
-            currentStage = 0;
-            updateProgress(0);
-            showStage(0);
+
+        // Enhanced header scroll effect
+        function handleHeaderScroll() {
+            const header = document.getElementById('header');
+            const scrollY = window.scrollY;
             
-            // Stage 1: Show chaos
-            setTimeout(() => {
-                updateProgress(25);
-            }, 1000);
-            
-            // Stage 2: Robot arrives
-            setTimeout(() => {
-                showStage(1);
-                updateProgress(50);
-                
-                // Robot processing animation
-                const robot = document.getElementById('robotContainer');
-                setTimeout(() => {
-                    robot.classList.add('processing');
-                    robot.classList.add('winking');
-                    
-                    // Energy waves
-                    document.getElementById('wave1').classList.add('pulse');
-                    setTimeout(() => {
-                        document.getElementById('wave2').classList.add('pulse');
-                    }, 500);
-                    
-                    setTimeout(() => {
-                        robot.classList.remove('winking');
-                        robot.classList.remove('processing');
-                    }, 1000);
-                }, 1000);
-                
-                createParticles();
-            }, 3000);
-            
-            // Stage 3: Transformation complete
-            setTimeout(() => {
-                showStage(2);
-                updateProgress(75);
-                
-                setTimeout(() => {
-                    document.getElementById('beforeBox').classList.add('show');
-                    setTimeout(() => {
-                        document.getElementById('afterBox').classList.add('show');
-                        updateProgress(90);
-                        setTimeout(() => {
-                            document.getElementById('successMsg').classList.add('show');
-                            updateProgress(100);
-                            createParticles();
-                        }, 1000);
-                    }, 500);
-                }, 500);
-            }, 7000);
-        }
-        
-        function resetAnimation() {
-            currentStage = 0;
-            updateProgress(0);
-            showStage(0);
-            
-            // Reset all animations
-            document.getElementById('beforeBox').classList.remove('show');
-            document.getElementById('afterBox').classList.remove('show');
-            document.getElementById('successMsg').classList.remove('show');
-            document.getElementById('wave1').classList.remove('pulse');
-            document.getElementById('wave2').classList.remove('pulse');
-            document.getElementById('robotContainer').classList.remove('processing', 'winking');
+            if (scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
         }
 
-        // Counting animation for metrics
-        function animateValue(element, start, end, duration, suffix = '') {
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                const value = (progress * (end - start) + start).toFixed(1);
-                element.textContent = value + suffix;
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
+        // Enhanced smooth scrolling
+        function initSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const headerHeight = document.getElementById('header').offsetHeight;
+                        const targetPosition = target.offsetTop - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Enhanced scroll reveal with stagger
+        function initScrollReveal() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
             };
-            window.requestAnimationFrame(step);
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        // Add stagger delay for grouped elements
+                        setTimeout(() => {
+                            entry.target.classList.add('revealed');
+                        }, index * 100);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all scroll reveal elements
+            document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right').forEach(el => {
+                observer.observe(el);
+            });
         }
 
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            // Start neural network
-            const canvas = document.getElementById('neural-canvas');
-            const network = new NeuralNetwork(canvas);
-            network.animate();
-
-            // Initialize transformation
-            showStage(0);
-
-            // Animate metrics when in view
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const metric = entry.target;
-                        const value = parseFloat(metric.dataset.value);
-                        if (metric.textContent.includes('$')) {
-                            animateValue(metric, 0, value, 2000, 'M');
-                        } else if (metric.textContent.includes('Hours')) {
-                            animateValue(metric, 0, value, 2000, ' Hours');
-                        } else if (metric.textContent.includes('X')) {
-                            animateValue(metric, 0, value, 2000, 'X');
-                        }
-                        observer.unobserve(metric);
-                    }
+        // Enhanced button interactions
+        function initButtonEffects() {
+            const buttons = document.querySelectorAll('.btn, .cta-button, .case-study-link');
+            
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px)';
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
                 });
             });
+        }
 
-            document.querySelectorAll('.result-metric').forEach(metric => {
-                observer.observe(metric);
+        // Parallax effect for hero background
+        function initParallaxEffect() {
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const heroSection = document.querySelector('.hero');
+                if (heroSection) {
+                    const rate = scrolled * -0.5;
+                    heroSection.style.transform = `translateY(${rate}px)`;
+                }
+            });
+        }
+
+        // Cursor trail effect (subtle)
+        function initCursorTrail() {
+            let mouseX = 0;
+            let mouseY = 0;
+            let trail = [];
+
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
             });
 
-            // Auto-start transformation when scrolled into view
-            const transformObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && currentStage === 0) {
-                        setTimeout(() => startTransformation(), 500);
-                        transformObserver.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
+            function animateTrail() {
+                trail.push({ x: mouseX, y: mouseY });
+                if (trail.length > 20) {
+                    trail.shift();
+                }
+                requestAnimationFrame(animateTrail);
+            }
 
-            transformObserver.observe(document.getElementById('transformation'));
+            animateTrail();
+        }
+
+        // Performance-optimized scroll listener
+        let ticking = false;
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    handleHeaderScroll();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+
+        // Initialize all effects
+        document.addEventListener('DOMContentLoaded', function() {
+            initNeuralNetwork();
+            createParticles();
+            initSmoothScrolling();
+            initScrollReveal();
+            initButtonEffects();
+            initParallaxEffect();
+            initCursorTrail();
+
+            // Optimized scroll listener
+            window.addEventListener('scroll', requestTick);
+
+            // Add initial animations
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right').forEach((el, index) => {
+                    setTimeout(() => {
+                        el.style.opacity = '1';
+                        el.style.transform = 'translateY(0) translateX(0)';
+                    }, index * 150);
+                });
+            }, 300);
         });
+
+        // Preload critical resources
+        function preloadResources() {
+            const fonts = [
+                'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap',
+                'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap',
+                'https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap'
+            ];
+
+            fonts.forEach(font => {
+                const link = document.createElement('link');
+                link.rel = 'preload';
+                link.as = 'style';
+                link.href = font;
+                document.head.appendChild(link);
+            });
+        }
+
+        preloadResources();
     </script>
 </body>
 </html>
