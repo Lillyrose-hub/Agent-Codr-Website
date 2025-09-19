@@ -542,7 +542,7 @@
             color: var(--ctp-mauve);
         }
 
-        /* Robot Winking Animation */
+        /* Robot Icon Styling */
         .product-icon {
             width: 80px;
             height: 80px;
@@ -576,48 +576,8 @@
             border: 1px solid rgba(198, 160, 246, 0.2);
         }
 
-        .robot-normal, .robot-wink {
-            position: absolute;
-            top: 8px;
-            left: 8px;
-            width: calc(100% - 16px);
-            height: calc(100% - 16px);
-            object-fit: contain;
-            transition: opacity 0.3s ease;
-            z-index: 2;
-            background: #181926;  /* Dark background for the images */
-            border-radius: 12px;
-            padding: 4px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-        }
-
-        /* Additional blend mode to help with any remaining white */
-        .product-card.codr .robot-normal,
-        .product-card.codr .robot-wink {
-            mix-blend-mode: normal;
+        .product-card.codr .product-icon img {
             filter: brightness(0.95) contrast(1.1);
-        }
-
-        .robot-wink {
-            opacity: 0;
-        }
-
-        @keyframes wink {
-            0%, 100% { opacity: 0; }
-            45%, 55% { opacity: 1; }
-        }
-
-        .product-card.codr:hover .robot-wink {
-            animation: wink 3s ease-in-out infinite;
-        }
-
-        .product-card.codr:hover .robot-normal {
-            animation: wink-reverse 3s ease-in-out infinite;
-        }
-
-        @keyframes wink-reverse {
-            0%, 100% { opacity: 1; }
-            45%, 55% { opacity: 0; }
         }
 
         .product-header {
@@ -928,8 +888,7 @@
                 <a href="agent-codr.html" class="product-card codr">
                     <div class="product-header">
                         <div class="product-icon">
-                            <img src="robot-logo.png" alt="Agent Codr" class="robot-normal">
-                            <img src="robot-wink.png" alt="Agent Codr Wink" class="robot-wink">
+                            <img src="robot-logo.png" alt="Agent Codr">
                         </div>
                         <div class="status-badge" style="background: rgba(198, 160, 246, 0.1); border-color: rgba(198, 160, 246, 0.3); color: var(--ctp-mauve);">
                             <div class="pulse-dot" style="background: var(--ctp-mauve);"></div>
