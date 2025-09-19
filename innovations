@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovations - Agent Codr</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            /* Catppuccin Macchiato Colors */
+            --ctp-rosewater: #f4dbd6;
+            --ctp-flamingo: #f0c6c6;
+            --ctp-pink: #f5bde6;
+            --ctp-mauve: #c6a0f6;
+            --ctp-red: #ed8796;
+            --ctp-maroon: #ee99a0;
+            --ctp-peach: #f5a97f;
+            --ctp-yellow: #eed49f;
+            --ctp-green: #a6da95;
+            --ctp-teal: #8bd5ca;
+            --ctp-sky: #91d7e3;
+            --ctp-sapphire: #7dc4e4;
+            --ctp-blue: #8aadf4;
+            --ctp-lavender: #b7bdf8;
+            --ctp-text: #cad3f5;
+            --ctp-subtext1: #b8c0e0;
+            --ctp-subtext0: #a5adcb;
+            --ctp-overlay2: #939ab7;
+            --ctp-overlay1: #8087a2;
+            --ctp-overlay0: #6e738d;
+            --ctp-surface2: #5b6078;
+            --ctp-surface1: #494d64;
+            --ctp-surface0: #363a4f;
+            --ctp-base: #24273a;
+            --ctp-mantle: #1e2030;
+            --ctp-crust: #181926;
+
+            /* Trading Green Accent */
+            --trading-green: #00ff88;
+            --trading-green-dim: #00d970;
+            
+            /* Semantic Colors */
+            --primary: var(--ctp-blue);
+            --secondary: var(--ctp-sapphire);
+            --accent: var(--ctp-mauve);
+            --text-primary: var(--ctp-text);
+            --text-secondary: var(--ctp-subtext1);
+            --text-muted: var(--ctp-subtext0);
+            --bg-primary: var(--ctp-crust);
+            --bg-secondary: var(--ctp-mantle);
+            --bg-tertiary: var(--ctp-base);
+            --bg-surface: var(--ctp-surface0);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Neural Network Background */
+        .neural-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            background: radial-gradient(ellipse at 50% 50%, rgba(36, 39, 58, 0.9) 0%, rgba(30, 32, 48, 0.95) 25%, rgba(24, 25, 38, 1) 50%, rgba(24, 25, 38, 1) 100%);
+        }
+
+        #neuralCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.6;
+        }
+
+        .data-stream {
+            position: absolute;
+            width: 2px;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, rgba(139, 213, 202, 0.4), transparent);
+            animation: dataFlow 4s linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes dataFlow {
+            0% { opacity: 0; transform: translateY(-100px); }
+            50% { opacity: 0.6; }
+            100% { opacity: 0; transform: translateY(100vh); }
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--primary);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float 15s linear infinite;
+        }
+
+        .particle:nth-child(odd) {
+            background: var(--accent);
+            animation-duration: 20s;
+        }
+
+        .particle:nth-child(3n) {
+            background: var(--secondary);
+            animation-duration: 25s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) translateX(0px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-10vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 5%;
+            background: rgba(24, 25, 38, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+        }
+
+        .robot-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 6px;
+            background: rgba(54, 58, 79, 0.5);
+            backdrop-filter: blur(10px);
+            padding: 4px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+
+        .logo-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .logo-agent {
+            color: var(--ctp-mauve);
+        }
+
+        .logo-codr {
+            color: var(--ctp-blue);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--ctp-mauve), var(--ctp-blue));
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .innovations-active {
+            color: var(--text-primary) !important;
+            position: relative;
+        }
+
+        .innovations-active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--ctp-mauve), var(--ctp-blue));
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 5% 100px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            background: radial-gradient(ellipse at top, rgba(198, 160, 246, 0.1) 0%, transparent 50%),
+                        radial-gradient(ellipse at bottom right, rgba(138, 173, 244, 0.1) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(198, 160, 246, 0.2);
+            border: 1px solid rgba(198, 160, 246, 0.4);
+            border-radius: 50px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            color: var(--ctp-lavender);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-size: clamp(48px, 8vw, 80px);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #ffffff 0%, var(--ctp-mauve) 25%, var(--ctp-blue) 50%, var(--ctp-sapphire) 75%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: gradient 3s linear infinite;
+            filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.5));
+        }
+
+        @keyframes gradient {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: var(--text-primary);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-weight: 400;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Products Grid */
+        .products-section {
+            padding: 100px 5%;
+            position: relative;
+            z-index: 10;
+        }
+
+        .products-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        /* Product Card */
+        .product-card {
+            background: linear-gradient(135deg, rgba(54, 58, 79, 0.4), rgba(54, 58, 79, 0.2));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+                        rgba(198, 160, 246, 0.15) 0%, 
+                        transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .product-card:hover::before {
+            opacity: 1;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: rgba(198, 160, 246, 0.5);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5),
+                        0 0 100px rgba(198, 160, 246, 0.2);
+        }
+
+        /* Agent Tradr Card - Green Accents */
+        .product-card.tradr {
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.05), rgba(54, 58, 79, 0.3));
+            border-color: rgba(0, 255, 136, 0.2);
+        }
+
+        .product-card.tradr:hover {
+            border-color: rgba(0, 255, 136, 0.5);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5),
+                        0 0 100px rgba(0, 255, 136, 0.2);
+        }
+
+        .product-card.tradr::before {
+            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+                        rgba(0, 255, 136, 0.15) 0%, 
+                        transparent 50%);
+        }
+
+        /* Agent Codr Card - Main Branding Colors */
+        .product-card.codr {
+            background: linear-gradient(135deg, rgba(198, 160, 246, 0.05), rgba(138, 173, 244, 0.05));
+            border-color: rgba(198, 160, 246, 0.2);
+        }
+
+        .product-card.codr:hover {
+            border-color: rgba(198, 160, 246, 0.5);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5),
+                        0 0 100px rgba(198, 160, 246, 0.2);
+        }
+
+        .product-card.codr::before {
+            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+                        rgba(198, 160, 246, 0.15) 0%, 
+                        transparent 50%);
+        }
+
+        .product-card.codr .product-name {
+            background: linear-gradient(135deg, var(--ctp-mauve) 0%, var(--ctp-blue) 50%, var(--ctp-sapphire) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .product-card.codr .feature-tag {
+            background: rgba(198, 160, 246, 0.05);
+            border-color: rgba(198, 160, 246, 0.2);
+            color: var(--ctp-lavender);
+        }
+
+        .product-card.codr .learn-more {
+            color: var(--ctp-mauve);
+        }
+
+        /* Robot Winking Animation */
+        .product-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin-bottom: 20px;
+            background: rgba(54, 58, 79, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 8px;
+            position: relative;
+        }
+
+        .product-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .robot-normal, .robot-wink {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: opacity 0.3s ease;
+        }
+
+        .robot-wink {
+            opacity: 0;
+        }
+
+        @keyframes wink {
+            0%, 100% { opacity: 0; }
+            45%, 55% { opacity: 1; }
+        }
+
+        .product-card.codr:hover .robot-wink {
+            animation: wink 3s ease-in-out infinite;
+        }
+
+        .product-card.codr:hover .robot-normal {
+            animation: wink-reverse 3s ease-in-out infinite;
+        }
+
+        @keyframes wink-reverse {
+            0%, 100% { opacity: 1; }
+            45%, 55% { opacity: 0; }
+        }
+
+        .product-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .status-badge {
+            padding: 6px 12px;
+            background: rgba(255, 193, 7, 0.1);
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            border-radius: 20px;
+            font-size: 11px;
+            color: #ffc107;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .pulse-dot {
+            width: 6px;
+            height: 6px;
+            background: #ffc107;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 8px rgba(255, 193, 7, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 193, 7, 0);
+            }
+        }
+
+        .product-name {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .product-card.tradr .product-name {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+            letter-spacing: 0.05em;
+        }
+
+        .product-card.tradr .product-name span {
+            display: inline-block;
+            opacity: 0;
+            animation: typeLetter 0.5s forwards;
+            animation-delay: var(--delay);
+        }
+
+        @keyframes typeLetter {
+            0% { 
+                opacity: 0;
+                transform: translateY(10px);
+                color: var(--ctp-mauve);
+            }
+            50% {
+                color: var(--ctp-teal);
+            }
+            100% { 
+                opacity: 1;
+                transform: translateY(0);
+                color: var(--trading-green);
+            }
+        }
+
+        .product-card.tradr .product-name::after {
+            content: "_";
+            display: inline-block;
+            animation: blink 1s infinite;
+            color: var(--trading-green);
+            font-weight: 400;
+        }
+
+        .product-tagline {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .product-description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .product-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .feature-tag {
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .product-card.tradr .feature-tag {
+            background: rgba(0, 255, 136, 0.05);
+            border-color: rgba(0, 255, 136, 0.2);
+            color: var(--ctp-green);
+        }
+
+        .learn-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--ctp-blue);
+            font-weight: 600;
+            text-decoration: none;
+            transition: gap 0.3s ease;
+        }
+
+        .product-card.tradr .learn-more {
+            color: var(--trading-green);
+        }
+
+        .learn-more:hover {
+            gap: 15px;
+        }
+
+        .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        /* Coming Soon Section */
+        .more-coming {
+            text-align: center;
+            padding: 100px 5%;
+            position: relative;
+            z-index: 10;
+            background: linear-gradient(180deg, transparent, rgba(36, 39, 58, 0.5));
+        }
+
+        .more-coming-content {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .more-coming h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff, var(--ctp-mauve), var(--ctp-blue), #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.5));
+        }
+
+        .more-coming p {
+            color: var(--text-primary);
+            font-size: 18px;
+            margin-bottom: 40px;
+            font-weight: 400;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .contact-btn {
+            padding: 18px 40px;
+            background: linear-gradient(135deg, var(--ctp-mauve), var(--ctp-blue));
+            border: none;
+            border-radius: 50px;
+            color: var(--bg-primary);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(198, 160, 246, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+                margin: 60px auto 0;
+            }
+
+            h1 {
+                font-size: 48px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            .product-name {
+                font-size: 24px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Neural Network Background -->
+    <div class="neural-backdrop">
+        <canvas id="neuralCanvas"></canvas>
+        <div id="dataStreams"></div>
+    </div>
+    
+    <!-- Particle System -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <div class="logo">
+                <img src="robot-logo.png" alt="Agent Codr" class="robot-logo">
+                <div class="logo-text">
+                    <span class="logo-agent">Agent</span>
+                    <span class="logo-codr">Codr</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/innovations" class="innovations-active">Innovations</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Our Laboratory</div>
+            <h1>The Future We're Building</h1>
+            <p class="hero-subtitle">
+                These aren't just products. They're proof of what's possible when AI meets ambition. 
+                Each innovation demonstrates our capability to transform complex challenges into elegant automation.
+            </p>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-section">
+        <div class="products-container">
+            <div class="products-grid">
+                <!-- Agent Tradr Card -->
+                <a href="/innovations/agent-tradr" class="product-card tradr">
+                    <div class="product-header">
+                        <div class="product-icon">
+                            <img src="robot-dollar-eyes.png" alt="Agent Tradr Logo">
+                        </div>
+                        <div class="status-badge">
+                            <div class="pulse-dot"></div>
+                            <span>Coming Soon</span>
+                        </div>
+                    </div>
+                    
+                    <h2 class="product-name">AgentTradr</h2>
+                    <p class="product-tagline">AI That Reads Markets Like a Veteran Trader</p>
+                    <p class="product-description">
+                        Agent Tradr analyzes real-time world news, economic data, and market sentiment to make intelligent trading decisions. It understands how global events impact markets - from Fed announcements to geopolitical shifts. Get instant Discord alerts explaining why to buy or sell, with AI-powered predictions and risk-adjusted strategies.
+                    </p>
+                    
+                    <div class="product-features">
+                        <span class="feature-tag">News-Driven Analysis</span>
+                        <span class="feature-tag">Discord Alerts</span>
+                        <span class="feature-tag">Risk Management</span>
+                        <span class="feature-tag">Market Predictions</span>
+                    </div>
+                    
+                    <div class="learn-more">
+                        <span>Explore Agent Tradr</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </a>
+
+                <!-- Agent Codr Card -->
+                <a href="/innovations/agent-codr" class="product-card codr">
+                    <div class="product-header">
+                        <div class="product-icon">
+                            <img src="robot-logo.png" alt="Agent Codr" class="robot-normal">
+                            <img src="robot-wink.png" alt="Agent Codr Wink" class="robot-wink">
+                        </div>
+                        <div class="status-badge" style="background: rgba(198, 160, 246, 0.1); border-color: rgba(198, 160, 246, 0.3); color: var(--ctp-mauve);">
+                            <div class="pulse-dot" style="background: var(--ctp-mauve);"></div>
+                            <span>Live Internal Beta</span>
+                        </div>
+                    </div>
+                    
+                    <h2 class="product-name">AgentCodr</h2>
+                    <p class="product-tagline">The AI That Builds Your Automation</p>
+                    <p class="product-description">
+                        AgentCodr is our proprietary AI automation platform that transforms business requirements into working software. Currently powering our client projects internally, it understands natural language instructions and builds complex workflows, integrations, and business logic without any coding. This is the same AI engine we use to deliver automation 10x faster than traditional development.
+                    </p>
+                    
+                    <div class="product-features">
+                        <span class="feature-tag">Natural Language to Code</span>
+                        <span class="feature-tag">Instant Deployment</span>
+                        <span class="feature-tag">Self-Optimizing</span>
+                        <span class="feature-tag">Enterprise Ready</span>
+                    </div>
+                    
+                    <div class="learn-more">
+                        <span>Explore AgentCodr</span>
+                        <span class="arrow">→</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- More Coming Soon -->
+    <section class="more-coming">
+        <div class="more-coming-content">
+            <h2>More Innovations Coming</h2>
+            <p>
+                We're constantly pushing boundaries and building the impossible. 
+                Have a complex challenge that needs an extraordinary solution?
+            </p>
+            <a href="/contact" class="contact-btn">Let's Build Something Amazing</a>
+        </div>
+    </section>
+
+    <script>
+        // Neural Network Visualization
+        function initNeuralNetwork() {
+            const canvas = document.getElementById('neuralCanvas');
+            if (!canvas) return;
+            
+            const ctx = canvas.getContext('2d');
+            
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            class Node {
+                constructor(x, y) {
+                    this.x = x;
+                    this.y = y;
+                    this.radius = Math.random() * 2 + 1;
+                    this.pulsePhase = Math.random() * Math.PI * 2;
+                    this.connections = [];
+                    this.glowIntensity = Math.random() * 0.3 + 0.3;
+                }
+
+                draw() {
+                    const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius * 4);
+                    const pulse = Math.sin(Date.now() * 0.001 + this.pulsePhase) * 0.2 + 0.5;
+                    
+                    gradient.addColorStop(0, `rgba(138, 173, 244, ${0.6 * pulse * this.glowIntensity})`);
+                    gradient.addColorStop(0.5, `rgba(198, 160, 246, ${0.3 * pulse * this.glowIntensity})`);
+                    gradient.addColorStop(1, 'transparent');
+                    
+                    ctx.fillStyle = gradient;
+                    ctx.fillRect(this.x - this.radius * 4, this.y - this.radius * 4, this.radius * 8, this.radius * 8);
+                    
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(183, 189, 248, ${pulse * 0.8})`;
+                    ctx.fill();
+                }
+
+                connectTo(node) {
+                    this.connections.push(node);
+                }
+
+                drawConnections() {
+                    this.connections.forEach(node => {
+                        const gradient = ctx.createLinearGradient(this.x, this.y, node.x, node.y);
+                        const pulse = Math.sin(Date.now() * 0.002 + this.pulsePhase) * 0.15 + 0.15;
+                        
+                        gradient.addColorStop(0, `rgba(139, 213, 202, ${pulse})`);
+                        gradient.addColorStop(0.5, `rgba(125, 196, 228, ${pulse * 1.5})`);
+                        gradient.addColorStop(1, `rgba(139, 213, 202, ${pulse})`);
+                        
+                        ctx.strokeStyle = gradient;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(this.x, this.y);
+                        
+                        const cx = (this.x + node.x) / 2 + (Math.random() - 0.5) * 30;
+                        const cy = (this.y + node.y) / 2 + (Math.random() - 0.5) * 30;
+                        ctx.quadraticCurveTo(cx, cy, node.x, node.y);
+                        ctx.stroke();
+                    });
+                }
+            }
+
+            const nodes = [];
+            const nodeCount = 25;
+            
+            for (let i = 0; i < nodeCount; i++) {
+                const angle = (i / nodeCount) * Math.PI * 2;
+                const radius = 150 + Math.random() * 250;
+                const x = canvas.width / 2 + Math.cos(angle) * radius + (Math.random() - 0.5) * 100;
+                const y = canvas.height / 2 + Math.sin(angle) * radius + (Math.random() - 0.5) * 100;
+                nodes.push(new Node(x, y));
+            }
+
+            nodes.forEach((node, i) => {
+                for (let j = 0; j < 2; j++) {
+                    const targetIndex = (i + Math.floor(Math.random() * 4) + 1) % nodeCount;
+                    node.connectTo(nodes[targetIndex]);
+                }
+            });
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                nodes.forEach(node => node.drawConnections());
+                nodes.forEach(node => node.draw());
+                requestAnimationFrame(animate);
+            }
+            animate();
+
+            // Create data streams
+            function createDataStream() {
+                const stream = document.createElement('div');
+                stream.className = 'data-stream';
+                stream.style.left = Math.random() * window.innerWidth + 'px';
+                stream.style.animationDelay = Math.random() * 3 + 's';
+                stream.style.animationDuration = (3 + Math.random() * 2) + 's';
+                const streamsContainer = document.getElementById('dataStreams');
+                if (streamsContainer) {
+                    streamsContainer.appendChild(stream);
+                    setTimeout(() => stream.remove(), 5000);
+                }
+            }
+
+            setInterval(createDataStream, 800);
+        }
+
+        // Create particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 15;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initNeuralNetwork();
+            createParticles();
+        });
+
+        // Add mouse tracking for gradient effect
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                
+                card.style.setProperty('--mouse-x', `${x}%`);
+                card.style.setProperty('--mouse-y', `${y}%`);
+            });
+        });
+
+        // Typewriter effect for AgentTradr
+        function typewriterEffect() {
+            const element = document.querySelector('.product-card.tradr .product-name');
+            if (!element) return;
+            
+            const text = 'AgentTradr';
+            element.innerHTML = '';
+            element.style.cssText = `
+                font-family: 'JetBrains Mono', monospace;
+                font-size: 32px;
+                font-weight: 700;
+                margin-bottom: 10px;
+                display: inline-block;
+                background: linear-gradient(90deg, #c6a0f6 0%, #8aadf4 30%, #8bd5ca 60%, #00ff88 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                background-size: 200% 100%;
+                animation: colorWave 3s ease-in-out infinite;
+            `;
+            
+            let i = 0;
+            const typeWriter = setInterval(() => {
+                if (i < text.length) {
+                    element.innerHTML = text.substring(0, i + 1) + '<span style="color: #00ff88; animation: blink 1s infinite;">_</span>';
+                    i++;
+                } else {
+                    element.innerHTML = text + '<span style="color: #00ff88; animation: blink 1s infinite;">_</span>';
+                    clearInterval(typeWriter);
+                    
+                    // Restart the animation after a pause
+                    setTimeout(() => {
+                        typewriterEffect();
+                    }, 5000); // Wait 5 seconds before restarting
+                }
+            }, 150);
+        }
+
+        // Typewriter effect for AgentCodr
+        function typewriterCodr() {
+            const element = document.querySelector('.product-card.codr .product-name');
+            if (!element) return;
+            
+            const text = 'AgentCodr';
+            element.innerHTML = '';
+            element.style.cssText = `
+                font-family: 'JetBrains Mono', monospace;
+                font-size: 32px;
+                font-weight: 700;
+                margin-bottom: 10px;
+                display: inline-block;
+                background: linear-gradient(90deg, #c6a0f6 0%, #8aadf4 40%, #7dc4e4 70%, #b7bdf8 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                background-size: 200% 100%;
+                animation: purpleWave 3s ease-in-out infinite;
+            `;
+            
+            let i = 0;
+            const typeWriter = setInterval(() => {
+                if (i < text.length) {
+                    element.innerHTML = text.substring(0, i + 1) + '<span style="color: #c6a0f6; animation: blink 1s infinite;">_</span>';
+                    i++;
+                } else {
+                    element.innerHTML = text + '<span style="color: #c6a0f6; animation: blink 1s infinite;">_</span>';
+                    clearInterval(typeWriter);
+                    
+                    // Restart after pause
+                    setTimeout(() => {
+                        typewriterCodr();
+                    }, 5000);
+                }
+            }, 150);
+        }
+
+        // Add CSS for animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes blink {
+                0%, 50% { opacity: 1; }
+                51%, 100% { opacity: 0; }
+            }
+            @keyframes colorWave {
+                0%, 100% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+            }
+            @keyframes purpleWave {
+                0%, 100% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            // Start AgentTradr typewriter effect
+            setTimeout(() => {
+                typewriterEffect();
+            }, 500);
+            
+            // Start AgentCodr typewriter effect
+            setTimeout(() => {
+                typewriterCodr();
+            }, 1000); // Slight delay so they don't start at the same time
+            
+            // Also set up observer for when scrolling
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                        entry.target.classList.add('animated');
+                        if (entry.target.classList.contains('tradr')) {
+                            typewriterEffect();
+                        } else if (entry.target.classList.contains('codr')) {
+                            typewriterCodr();
+                        }
+                    }
+                });
+            });
+
+            const tradrCard = document.querySelector('.product-card.tradr');
+            const codrCard = document.querySelector('.product-card.codr');
+            if (tradrCard) observer.observe(tradrCard);
+            if (codrCard) observer.observe(codrCard);
+        });
+    </script>
+</body>
+</html>
