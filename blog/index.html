@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Agent Solvr Insights</title>
+    <meta name="description" content="Automation insights, AI strategies, and business optimization guides from Agent Solvr.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Copy all the CSS variables and base styles from your main site */
+        :root {
+            --ctp-blue: #8aadf4;
+            --ctp-mauve: #c6a0f6;
+            --ctp-text: #cad3f5;
+            --ctp-subtext1: #b8c0e0;
+            --ctp-crust: #181926;
+            --ctp-mantle: #1e2030;
+            --ctp-base: #24273a;
+            --ctp-surface0: #363a4f;
+            --bg-primary: var(--ctp-crust);
+            --text-primary: var(--ctp-text);
+            --gradient-primary: linear-gradient(135deg, #8aadf4 0%, #7dc4e4 50%, #8bd5ca 100%);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Manrope', 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Navigation - simplified version */
+        .header {
+            background: rgba(24, 25, 38, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(138, 173, 244, 0.1);
+            padding: 1rem 0;
+            margin-bottom: 4rem;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+        
+        .robot-logo {
+            width: 50px;
+            height: 50px;
+        }
+        
+        .logo-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .logo-agent { color: #cba6f7; }
+        .logo-solvr { color: #89b4fa; }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--ctp-blue);
+        }
+        
+        /* Blog Header */
+        .blog-hero {
+            text-align: center;
+            padding: 4rem 0;
+            margin-bottom: 4rem;
+            background: linear-gradient(135deg, rgba(138, 173, 244, 0.1) 0%, rgba(198, 160, 246, 0.1) 100%);
+            border-radius: 20px;
+        }
+        
+        .blog-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .blog-hero p {
+            font-size: 1.25rem;
+            color: var(--ctp-subtext1);
+        }
+        
+        /* Blog Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .blog-card {
+            background: var(--ctp-base);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(138, 173, 244, 0.1);
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(138, 173, 244, 0.2);
+            border-color: rgba(138, 173, 244, 0.3);
+        }
+        
+        .blog-card-header {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(138, 173, 244, 0.1) 0%, rgba(198, 160, 246, 0.1) 100%);
+        }
+        
+        .blog-date {
+            font-size: 0.9rem;
+            color: var(--ctp-subtext1);
+            margin-bottom: 0.5rem;
+        }
+        
+        .blog-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+        
+        .blog-card-body {
+            padding: 1.5rem;
+        }
+        
+        .blog-excerpt {
+            color: var(--ctp-subtext1);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .blog-link {
+            color: var(--ctp-blue);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s;
+        }
+        
+        .blog-link:hover {
+            gap: 1rem;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 3rem 0;
+            border-top: 1px solid rgba(138, 173, 244, 0.1);
+            color: var(--ctp-subtext1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="../index.html" class="logo">
+                    <img src="../robot-logo-solvr.png" alt="Agent Solvr" class="robot-logo">
+                    <div class="logo-text">
+                        <span class="logo-agent">Agent</span>
+                        <span class="logo-solvr">Solvr</span>
+                    </div>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../innovations.html">Innovations</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="index.html" style="color: var(--ctp-blue);">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Blog Hero -->
+        <div class="blog-hero">
+            <h1>Automation Insights</h1>
+            <p>Practical guides to transform your business with AI and automation</p>
+        </div>
+
+        <!-- Blog Grid -->
+        <div class="blog-grid">
+            <!-- Blog Post 1 -->
+            <article class="blog-card">
+                <div class="blog-card-header">
+                    <div class="blog-date">September 20, 2025</div>
+                    <h2 class="blog-title">How to Stop Missing Deadlines as a Freelancer</h2>
+                </div>
+                <div class="blog-card-body">
+                    <p class="blog-excerpt">
+                        Discover proven strategies and automation tools to manage your freelance projects effectively and never miss another deadline.
+                    </p>
+                    <a href="freelancer-deadline-management.html" class="blog-link">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Blog Post 2 -->
+            <article class="blog-card">
+                <div class="blog-card-header">
+                    <div class="blog-date">September 20, 2025</div>
+                    <h2 class="blog-title">Making Work From Home Actually Work</h2>
+                </div>
+                <div class="blog-card-body">
+                    <p class="blog-excerpt">
+                        Transform your home into a productivity powerhouse with these practical techniques and tools for remote work success.
+                    </p>
+                    <a href="work-from-home-productivity.html" class="blog-link">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Placeholder for future posts -->
+            <article class="blog-card" style="opacity: 0.5;">
+                <div class="blog-card-header">
+                    <div class="blog-date">Coming Soon</div>
+                    <h2 class="blog-title">More Insights Coming...</h2>
+                </div>
+                <div class="blog-card-body">
+                    <p class="blog-excerpt">
+                        We're constantly creating new content to help you automate and optimize your business operations.
+                    </p>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Agent Solvr. Engineering the future of business automation.</p>
+        </div>
+    </footer>
+</body>
+</html>

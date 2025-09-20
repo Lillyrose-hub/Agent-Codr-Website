@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Making Work From Home Actually Work - Agent Solvr</title>
+    <meta name="description" content="Transform your home into a productivity powerhouse with these practical techniques and tools for remote work success.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --ctp-blue: #8aadf4;
+            --ctp-mauve: #c6a0f6;
+            --ctp-text: #cad3f5;
+            --ctp-subtext1: #b8c0e0;
+            --ctp-crust: #181926;
+            --ctp-mantle: #1e2030;
+            --ctp-base: #24273a;
+            --ctp-surface0: #363a4f;
+            --bg-primary: var(--ctp-crust);
+            --text-primary: var(--ctp-text);
+            --gradient-primary: linear-gradient(135deg, #8aadf4 0%, #7dc4e4 50%, #8bd5ca 100%);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Manrope', 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Navigation */
+        .header {
+            background: rgba(24, 25, 38, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(138, 173, 244, 0.1);
+            padding: 1rem 0;
+            margin-bottom: 4rem;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+        
+        .robot-logo {
+            width: 50px;
+            height: 50px;
+        }
+        
+        .logo-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .logo-agent { color: #cba6f7; }
+        .logo-solvr { color: #89b4fa; }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--ctp-blue);
+        }
+        
+        /* Article Styles */
+        .article-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, rgba(138, 173, 244, 0.1) 0%, rgba(198, 160, 246, 0.1) 100%);
+            border-radius: 20px;
+        }
+        
+        .article-meta {
+            color: var(--ctp-subtext1);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        
+        .article-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+        
+        .article-description {
+            font-size: 1.25rem;
+            color: var(--ctp-subtext1);
+            font-style: italic;
+        }
+        
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-primary);
+        }
+        
+        .article-content h2 {
+            font-size: 2rem;
+            margin: 3rem 0 1.5rem 0;
+            color: var(--ctp-blue);
+            font-weight: 600;
+        }
+        
+        .article-content h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem 0;
+            color: var(--ctp-mauve);
+            font-weight: 500;
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 1.5rem 0 1.5rem 2rem;
+        }
+        
+        .article-content li {
+            margin-bottom: 0.75rem;
+            color: var(--ctp-subtext1);
+        }
+        
+        .article-content strong {
+            color: var(--ctp-blue);
+            font-weight: 600;
+        }
+        
+        .article-content em {
+            color: var(--ctp-mauve);
+        }
+        
+        /* Schedule Table */
+        .schedule-table {
+            background: var(--ctp-base);
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 2rem 0;
+            border: 1px solid rgba(138, 173, 244, 0.2);
+        }
+        
+        .schedule-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .schedule-table th {
+            background: linear-gradient(135deg, rgba(138, 173, 244, 0.2) 0%, rgba(198, 160, 246, 0.2) 100%);
+            color: var(--ctp-blue);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .schedule-table td {
+            padding: 1rem;
+            border-top: 1px solid rgba(138, 173, 244, 0.1);
+            color: var(--ctp-subtext1);
+        }
+        
+        .schedule-table .time {
+            color: var(--ctp-mauve);
+            font-weight: 600;
+        }
+        
+        /* Tool Cards */
+        .tool-card {
+            background: var(--ctp-base);
+            border: 1px solid rgba(138, 173, 244, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .tool-card h4 {
+            color: var(--ctp-blue);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .tool-card p {
+            color: var(--ctp-subtext1);
+            margin-bottom: 1rem;
+        }
+        
+        .tool-card .price {
+            color: var(--ctp-mauve);
+            font-weight: 600;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(138, 173, 244, 0.1) 0%, rgba(198, 160, 246, 0.1) 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 4rem 0;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            color: var(--ctp-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            color: var(--ctp-subtext1);
+            margin-bottom: 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--gradient-primary);
+            color: var(--ctp-crust);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(138, 173, 244, 0.3);
+        }
+        
+        /* Back to Blog Link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--ctp-blue);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: gap 0.3s;
+        }
+        
+        .back-link:hover {
+            gap: 1rem;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 3rem 0;
+            border-top: 1px solid rgba(138, 173, 244, 0.1);
+            color: var(--ctp-subtext1);
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <a href="../index.html" class="logo">
+                <img src="../robot-logo-solvr.png" alt="Agent Solvr" class="robot-logo">
+                <div class="logo-text">
+                    <span class="logo-agent">Agent</span>
+                    <span class="logo-solvr">Solvr</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../innovations.html">Innovations</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+                <li><a href="index.html" style="color: var(--ctp-blue);">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Back to Blog -->
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Blog
+        </a>
+
+        <!-- Article Header -->
+        <header class="article-header">
+            <div class="article-meta">September 20, 2025 • 10 min read</div>
+            <h1 class="article-title">Making Work From Home Actually Work</h1>
+            <p class="article-description">Transform your home into a productivity powerhouse without losing your sanity</p>
+        </header>
+
+        <!-- Article Content -->
+        <article class="article-content">
+            <p>Let's be honest: that dream of working from your couch in pajamas? It's a productivity nightmare. After two years of remote work becoming mainstream, we've learned that <strong>successful work from home requires intentional design, not just a laptop and wifi</strong>.</p>
+
+            <p>The difference between thriving and barely surviving while working from home comes down to systems, boundaries, and the right tools. This guide isn't about generic advice like "take breaks" or "stay hydrated." This is about the specific tactics that actually move the needle.</p>
+
+            <h2>The Invisible Productivity Killers in Your Home</h2>
+
+            <p>Your home is designed for comfort, not productivity. Every room whispers different suggestions: the couch says "relax," the kitchen says "snack," the bed says "just five more minutes." <em>Your environment is literally programmed against deep work</em>.</p>
+
+            <p>Here's what's secretly sabotaging your productivity:</p>
+
+            <ul>
+                <li><strong>Decision fatigue from lack of structure:</strong> Without a commute and office routine, you make 100+ more micro-decisions daily</li>
+                <li><strong>Context switching overload:</strong> Your brain can't distinguish between "home mode" and "work mode" without clear signals</li>
+                <li><strong>The always-on trap:</strong> When your office is 10 feet from your bed, when does work really end?</li>
+                <li><strong>Social isolation productivity drain:</strong> Humans aren't meant to work alone all day—it literally affects your cognitive performance</li>
+            </ul>
+
+            <h2>The 90-Minute Revolution</h2>
+
+            <p>Forget the 8-hour workday. Your brain operates on 90-minute cycles called ultradian rhythms. <strong>Working with these cycles instead of against them can double your effective output</strong>.</p>
+
+            <p>Here's how to structure your day around your biology:</p>
+
+            <div class="schedule-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Time Block</th>
+                            <th>Activity</th>
+                            <th>Why It Works</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="time">First 90 min</td>
+                            <td>Deep work on hardest task</td>
+                            <td>Cortisol peak = maximum focus</td>
+                        </tr>
+                        <tr>
+                            <td class="time">15 min break</td>
+                            <td>Physical movement</td>
+                            <td>Resets attention, boosts creativity</td>
+                        </tr>
+                        <tr>
+                            <td class="time">Second 90 min</td>
+                            <td>Creative or collaborative work</td>
+                            <td>Post-movement brain is primed for innovation</td>
+                        </tr>
+                        <tr>
+                            <td class="time">30 min break</td>
+                            <td>Complete disconnect</td>
+                            <td>Prevents burnout, maintains sustainability</td>
+                        </tr>
+                        <tr>
+                            <td class="time">Third 90 min</td>
+                            <td>Administrative tasks</td>
+                            <td>Lower cognitive demand matches energy dip</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>The Sacred Space Protocol</h2>
+
+            <p>You need a workspace that your brain recognizes as "work mode" trigger. This isn't about having a home office—it's about creating psychological boundaries.</p>
+
+            <h3>The Minimalist Setup (Works in 100 sq ft)</h3>
+
+            <ul>
+                <li><strong>One dedicated surface:</strong> Even a folding desk that you setup daily creates the boundary</li>
+                <li><strong>Work-only equipment:</strong> Separate keyboard, mouse, or even just a different coffee mug</li>
+                <li><strong>Visual anchor:</strong> A small plant, lamp, or picture that only appears during work hours</li>
+                <li><strong>Audio boundary:</strong> Specific playlist or white noise that only plays during work</li>
+            </ul>
+
+            <p>The key: <em>consistency creates the association</em>. After two weeks, your brain will automatically shift into work mode when these elements appear.</p>
+
+            <h2>The Tool Stack That Changes Everything</h2>
+
+            <p>Stop cobbling together free tools that sort of work. Here's the minimal viable stack that successful remote workers actually use:</p>
+
+            <div class="tool-card">
+                <h4>Freedom</h4>
+                <p>Nuclear option for focus. Blocks distracting websites and apps across all your devices. No cheating, no exceptions.</p>
+                <p class="price">Price: $3/month when paid annually</p>
+            </div>
+
+            <div class="tool-card">
+                <h4>Loom</h4>
+                <p>Replace 30-minute meetings with 5-minute videos. Async communication that respects everyone's deep work time.</p>
+                <p class="price">Price: Free for basic, $8/month for unlimited</p>
+            </div>
+
+            <div class="tool-card">
+                <h4>Forest App</h4>
+                <p>Gamifies focus time. Plant virtual trees while you work—check your phone and the tree dies. Weirdly effective.</p>
+                <p class="price">Price: $3.99 one-time purchase</p>
+            </div>
+
+            <div class="tool-card">
+                <h4>Clockify</h4>
+                <p>Track where your time actually goes. The data will shock you—and that shock drives behavior change.</p>
+                <p class="price">Price: Free for unlimited tracking</p>
+            </div>
+
+            <h2>The Communication Protocol</h2>
+
+            <p>Remote work fails when communication is either too much (constant Slack) or too little (email black holes). You need structured async communication:</p>
+
+            <h3>The Daily Stand-up (But Make It Async)</h3>
+
+            <p>Every morning, post three things:</p>
+            <ol>
+                <li>What you accomplished yesterday</li>
+                <li>What you're working on today</li>
+                <li>Any blockers you're facing</li>
+            </ol>
+
+            <p>Takes 2 minutes. Keeps everyone aligned. No meeting required.</p>
+
+            <h3>The Response Time Contract</h3>
+
+            <p>Set clear expectations with yourself and others:</p>
+            <ul>
+                <li><strong>Urgent:</strong> Phone call (rare, true emergencies only)</li>
+                <li><strong>Today:</strong> Slack/Teams (check 3x daily)</li>
+                <li><strong>This week:</strong> Email (batch process daily)</li>
+                <li><strong>FYI only:</strong> Project management tool (check as needed)</li>
+            </ul>
+
+            <h2>The Energy Management System</h2>
+
+            <p>Time management is outdated. Energy management is everything. <strong>You can have 8 hours available but if your energy is depleted, you'll produce 2 hours of value</strong>.</p>
+
+            <h3>The Four Types of Energy</h3>
+
+            <ul>
+                <li><strong>Physical:</strong> Movement every 90 minutes, proper lighting, ergonomic setup</li>
+                <li><strong>Emotional:</strong> Connection with others, meaningful work alignment</li>
+                <li><strong>Mental:</strong> Single-tasking, decision reduction, information diet</li>
+                <li><strong>Spiritual:</strong> Purpose clarity, value alignment, impact visibility</li>
+            </ul>
+
+            <p>Audit yourself weekly: Which energy type is depleted? That's your bottleneck.</p>
+
+            <h2>The Shutdown Ritual</h2>
+
+            <p>The biggest WFH mistake? Never actually stopping work. Your brain needs a clear END signal.</p>
+
+            <p>Every day at your chosen end time, do this 10-minute ritual:</p>
+
+            <ol>
+                <li><strong>Review today:</strong> What got done? What didn't? Why?</li>
+                <li><strong>Plan tomorrow:</strong> Top 3 priorities, scheduled in calendar</li>
+                <li><strong>Clear the deck:</strong> Close all tabs, clear desktop, shutdown computer</li>
+                <li><strong>State the magic phrase:</strong> "Work is complete" (yes, say it out loud)</li>
+                <li><strong>Physical transition:</strong> Change clothes, take a walk, anything that signals "home mode"</li>
+            </ol>
+
+            <h2>The Hard Truth About WFH</h2>
+
+            <p>Working from home isn't easier—it's different. It requires more discipline, better systems, and constant calibration. But when you get it right, you unlock something powerful: <em>the ability to do your best work while living your best life</em>.</p>
+
+            <p>The people crushing it in remote work aren't special. They've just built better systems. They've turned their home into a productivity machine that runs on autopilot.</p>
+
+            <p>Start with one change. Pick the 90-minute blocks or the shutdown ritual. Run it for a week. Then add another system. Within a month, you'll be operating at a level you didn't know was possible.</p>
+
+            <p><strong>Remember: Remote work is a skill. And like any skill, it can be learned, practiced, and mastered.</strong></p>
+        </article>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2>Ready to Maximize Your Remote Work Productivity?</h2>
+            <p>Let us design custom automation workflows that transform your work-from-home experience.</p>
+            <a href="../contact.html" class="cta-button">Get Your Free Consultation</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Agent Solvr. Engineering the future of business automation.</p>
+        </div>
+    </footer>
+</body>
+</html>
