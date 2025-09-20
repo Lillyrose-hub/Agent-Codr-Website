@@ -31,10 +31,108 @@
             line-height: 1.6;
         }
         
+        /* Neural Network Background */
+        .neural-backdrop { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            z-index: 0; 
+            pointer-events: none; 
+            background: radial-gradient(ellipse at 50% 50%, rgba(36, 39, 58, 0.9) 0%, rgba(30, 32, 48, 0.95) 25%, rgba(24, 25, 38, 1) 50%, rgba(24, 25, 38, 1) 100%); 
+        }
+        
+        #neuralCanvas { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            opacity: 0.6; 
+        }
+        
+        .central-core { 
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            width: 400px; 
+            height: 400px; 
+            pointer-events: none; 
+            opacity: 0.3; 
+        }
+        
+        .core-shape { 
+            position: absolute; 
+            width: 100%; 
+            height: 100%; 
+            background: conic-gradient(from 0deg, transparent, rgba(138, 173, 244, 0.2), rgba(198, 160, 246, 0.2), transparent, rgba(125, 196, 228, 0.2), transparent); 
+            border-radius: 50%; 
+            animation: rotateCore 30s linear infinite; 
+            filter: blur(60px); 
+        }
+        
+        @keyframes rotateCore { 
+            0% { transform: rotate(0deg); } 
+            100% { transform: rotate(360deg); } 
+        }
+        
+        .core-inner { 
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            width: 200px; 
+            height: 200px; 
+            background: radial-gradient(circle, rgba(138, 173, 244, 0.2) 0%, rgba(198, 160, 246, 0.15) 30%, transparent 70%); 
+            border-radius: 50%; 
+            animation: pulse 4s ease-in-out infinite; 
+        }
+        
+        @keyframes pulse { 
+            0%, 100% { transform: translate(-50%, -50%) scale(1); } 
+            50% { transform: translate(-50%, -50%) scale(1.2); } 
+        }
+        
+        .particles { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            pointer-events: none; 
+            z-index: 1; 
+        }
+        
+        .particle { 
+            position: absolute; 
+            width: 2px; 
+            height: 2px; 
+            background: var(--ctp-blue); 
+            border-radius: 50%; 
+            opacity: 0.3; 
+            animation: float 15s linear infinite; 
+        }
+        
+        .particle:nth-child(odd) { 
+            background: var(--ctp-mauve); 
+            animation-duration: 20s; 
+        }
+        
+        @keyframes float { 
+            0% { transform: translateY(100vh) translateX(0px); opacity: 0; } 
+            10% { opacity: 0.3; } 
+            90% { opacity: 0.3; } 
+            100% { transform: translateY(-10vh) translateX(100px); opacity: 0; } 
+        }
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
+            position: relative;
+            z-index: 10;
         }
         
         .header {
@@ -43,6 +141,8 @@
             border-bottom: 1px solid rgba(138, 173, 244, 0.1);
             padding: 1rem 0;
             margin-bottom: 4rem;
+            position: relative;
+            z-index: 100;
         }
         
         .nav {
@@ -94,6 +194,8 @@
             margin-bottom: 4rem;
             background: linear-gradient(135deg, rgba(138, 173, 244, 0.1) 0%, rgba(198, 160, 246, 0.1) 100%);
             border-radius: 20px;
+            position: relative;
+            z-index: 10;
         }
         
         .blog-hero h1 {
@@ -114,6 +216,8 @@
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 2rem;
             margin-bottom: 4rem;
+            position: relative;
+            z-index: 10;
         }
         
         .blog-card {
@@ -176,10 +280,34 @@
             padding: 3rem 0;
             border-top: 1px solid rgba(138, 173, 244, 0.1);
             color: var(--ctp-subtext1);
+            position: relative;
+            z-index: 10;
         }
     </style>
 </head>
 <body>
+    <!-- Neural Network Background -->
+    <div class="neural-backdrop">
+        <canvas id="neuralCanvas"></canvas>
+        <div class="central-core">
+            <div class="core-shape"></div>
+            <div class="core-inner"></div>
+        </div>
+    </div>
+
+    <!-- Floating Particles -->
+    <div class="particles">
+        <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
+        <div class="particle" style="left: 40%; animation-delay: 6s;"></div>
+        <div class="particle" style="left: 50%; animation-delay: 8s;"></div>
+        <div class="particle" style="left: 60%; animation-delay: 10s;"></div>
+        <div class="particle" style="left: 70%; animation-delay: 12s;"></div>
+        <div class="particle" style="left: 80%; animation-delay: 14s;"></div>
+        <div class="particle" style="left: 90%; animation-delay: 16s;"></div>
+    </div>
+
     <!-- Navigation -->
     <header class="header">
         <div class="container">
@@ -263,5 +391,103 @@
             <p>&copy; 2025 Agent Solvr. Engineering the future of business automation.</p>
         </div>
     </footer>
+
+    <!-- Neural Network Animation Script -->
+    <script>
+        // Neural Network Animation
+        const canvas = document.getElementById('neuralCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+        
+        class NeuralNetwork {
+            constructor() {
+                this.nodes = [];
+                this.connections = [];
+                this.init();
+            }
+            
+            init() {
+                // Create nodes
+                for (let i = 0; i < 20; i++) {
+                    this.nodes.push({
+                        x: Math.random() * canvas.width,
+                        y: Math.random() * canvas.height,
+                        vx: (Math.random() - 0.5) * 0.5,
+                        vy: (Math.random() - 0.5) * 0.5,
+                        radius: Math.random() * 3 + 1,
+                        opacity: Math.random() * 0.5 + 0.2
+                    });
+                }
+            }
+            
+            update() {
+                // Update node positions
+                this.nodes.forEach(node => {
+                    node.x += node.vx;
+                    node.y += node.vy;
+                    
+                    if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
+                    if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
+                });
+                
+                // Update connections
+                this.connections = [];
+                for (let i = 0; i < this.nodes.length; i++) {
+                    for (let j = i + 1; j < this.nodes.length; j++) {
+                        const dx = this.nodes[i].x - this.nodes[j].x;
+                        const dy = this.nodes[i].y - this.nodes[j].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        
+                        if (distance < 150) {
+                            this.connections.push({
+                                from: this.nodes[i],
+                                to: this.nodes[j],
+                                opacity: (1 - distance / 150) * 0.3
+                            });
+                        }
+                    }
+                }
+            }
+            
+            draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                // Draw connections
+                this.connections.forEach(conn => {
+                    ctx.beginPath();
+                    ctx.moveTo(conn.from.x, conn.from.y);
+                    ctx.lineTo(conn.to.x, conn.to.y);
+                    ctx.strokeStyle = `rgba(138, 173, 244, ${conn.opacity})`;
+                    ctx.lineWidth = 1;
+                    ctx.stroke();
+                });
+                
+                // Draw nodes
+                this.nodes.forEach(node => {
+                    ctx.beginPath();
+                    ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(198, 160, 246, ${node.opacity})`;
+                    ctx.fill();
+                });
+            }
+        }
+        
+        const network = new NeuralNetwork();
+        
+        function animate() {
+            network.update();
+            network.draw();
+            requestAnimationFrame(animate);
+        }
+        
+        animate();
+    </script>
 </body>
 </html>
